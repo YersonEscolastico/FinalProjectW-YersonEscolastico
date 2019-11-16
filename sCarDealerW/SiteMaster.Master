@@ -125,20 +125,18 @@
                         <li><a href="#" style="font-family:Arial; font-size:16px">Ayuda</a></li>
 
                     </ul>
-   
-                </div>
-                <div class="clearfix visible-lg-block"></div>
+  </div>
               </nav>
             </div>
       
 
-          <%--contenedor y pie de pagina--%>
+            <%--contenedor y pie de pagina--%>
         <div class=" container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <footer> 
                      <div class="panel; row-xs-12 col-sm-12 col-md-12  col-lg-12 "  style="font-family:Arial; font-size:16px; text-align:center ; background-color:#0094ff">
-                     <p style="color:#000000">&copy; <%: DateTime.Now.Year %> - ParcialUno</p>
+                     <p style="color:#000000">&copy; <%: DateTime.Now.Year %> - Car Dealer San Francisco</p>
                 </div>
             </footer>
         </div>

@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace sCarDealerW
+namespace sCarDealerW.Registros
 {
-    public partial class SiteMaster : System.Web.UI.MasterPage
+    public partial class rUsuarios : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
+
         }
     }
 }
