@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true" CodeBehind="rClientes.aspx.cs" Inherits="sCarDealerW.Registros.rClientes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-      <div class="container">
+     <div class="container">
 
         <div class="panel" style="background-color: #0094ff">
             <div class="panel-heading" style="font-family: Arial Black; font-size: 20px; text-align: center; color: Black">Registro de Clientes</div>
@@ -133,6 +133,7 @@
             <hr>
         </div>
     </div>
+    
 </asp:Content>
 
 

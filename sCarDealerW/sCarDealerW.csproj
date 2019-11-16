@@ -109,6 +109,7 @@
     <Content Include="Global.asax" />
     <Content Include="Registros\rClientes.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
+    <Content Include="Registros\rVehiculos.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -200,6 +201,13 @@
     </Compile>
     <Compile Include="Registros\rUsuarios.aspx.designer.cs">
       <DependentUpon>rUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rVehiculos.aspx.cs">
+      <DependentUpon>rVehiculos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rVehiculos.aspx.designer.cs">
+      <DependentUpon>rVehiculos.aspx</DependentUpon>
     </Compile>
     <Compile Include="SiteMaster.Master.cs">
       <DependentUpon>SiteMaster.Master</DependentUpon>
