@@ -36,7 +36,6 @@ namespace sCarDealerW.Registros
             DireccionTextBox.Text = string.Empty;
             TelefonoTextBox.Text = string.Empty;
             CelularTextBox.Text = string.Empty;
-            FechaNacimientoTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             FechaRegistroTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
 

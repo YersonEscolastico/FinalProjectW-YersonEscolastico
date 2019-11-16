@@ -186,15 +186,6 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
-        /// TotalVendidoTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TotalVendidoTextBox;
-
-        /// <summary>
         /// FechaRegistroTextBox control.
         /// </summary>
         /// <remarks>
@@ -202,6 +193,15 @@ namespace sCarDealerW.Registros
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox FechaRegistroTextBox;
+
+        /// <summary>
+        /// TotalVendidoTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TotalVendidoTextBox;
 
         /// <summary>
         /// NuevoButton control.

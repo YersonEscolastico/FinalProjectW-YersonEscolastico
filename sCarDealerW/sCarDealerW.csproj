@@ -110,6 +110,7 @@
     <Content Include="Registros\rClientes.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Registros\rVehiculos.aspx" />
+    <Content Include="Resources\hh.ico" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
