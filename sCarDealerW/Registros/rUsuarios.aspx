@@ -21,7 +21,7 @@
 
                           <%--Buscar Button--%>
                 <div class="col-sm-1 col-md-2 col-xs2">
-                    <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-sm" ValidationGroup="Buscar" />
+                    <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-sm" ValidationGroup="Buscar"  OnClick="BtnBuscar_Click" />
                 </div>
          
 
@@ -101,20 +101,29 @@
                     <asp:TextBox type="Number" class="form-control" ID="TotalVendidoTextBox" Text="0" runat="server" ReadOnly="True"></asp:TextBox>
                 </div>
             </div>
+
+                    <%--Fecha Registro--%>
+            <div class="form-group row">
+                   <label class="control-label col-sm-3" for="FechaRegistroTextBox">Fecha:</label>
+                <div class="col-sm-1 col-md-5">
+                    <asp:TextBox ID="FechaRegistroTextBox" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="False" />
+                </div>
+                   </div>
+            </div>
+
+
             <hr>
             <div class="panel">
                 <div class="text-center">
                     <div class="form-group">
-                        <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" class="btn btn-primary" ValidationGroup="guardar"/>
-                        <asp:Button ID="GuardarButton" runat="server" Text="Guardar" class="btn btn-success" ValidationGroup="guardar"  />
-                        <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" class="btn btn-danger" ValidationGroup="Buscar" />
+                        <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" class="btn btn-primary" ValidationGroup="guardar" OnClick="BtnNuevo_Click" />
+                        <asp:Button ID="GuardarButton" runat="server" Text="Guardar" class="btn btn-success" ValidationGroup="guardar" OnClick="BtnGuardar_Click"  />
+                        <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" class="btn btn-danger" ValidationGroup="Buscar" OnClick="BtnEliminar_Click"  />
                     </div>
                 </div>
             </div>
             <script type="text/javascript"> function VerificarCantidad(sender, args) { args.IsValid = (args.Value.length <= 11); }</script>
             <hr>
         </div>
-    </div>
-
 
 </asp:Content>

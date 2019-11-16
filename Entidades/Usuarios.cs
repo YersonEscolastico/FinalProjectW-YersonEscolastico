@@ -13,9 +13,9 @@ namespace Entidades
         [Key]
 
         public int UsuarioId { get; set; }
-        public string Nombre { get; set; }
+        public string Nombres { get; set; }
         public string Email { get; set; }
-        public string Usuario { get; set; }
+        public string Usuarioss { get; set; }
         public string Clave { get; set; }
         public string NivelAcceso { get; set; }
         public decimal TotalVentas { get; set; }
@@ -25,9 +25,9 @@ namespace Entidades
         public Usuarios()
         {
             UsuarioId = 0;
-            Nombre = string.Empty;
+            Nombres = string.Empty;
             Email = string.Empty;
-            Usuario = string.Empty;
+            Usuarioss = string.Empty;
             Clave = string.Empty;
             NivelAcceso = string.Empty;
             TotalVentas = 0;
