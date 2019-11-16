@@ -15,31 +15,31 @@ namespace sCarDealerW.Registros
     {
 
         /// <summary>
-        /// UsuarioIdTextBox control.
+        /// ClienteIdTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UsuarioIdTextBox;
+        protected global::System.Web.UI.WebControls.TextBox ClienteIdTextBox;
 
         /// <summary>
-        /// UsuarioIdTextBoxRequiredFieldValidator control.
+        /// ClienteIdTextBoxRequiredFieldValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator UsuarioIdTextBoxRequiredFieldValidator;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ClienteIdTextBoxRequiredFieldValidator;
 
         /// <summary>
-        /// UsuarioIdTextBoxRegularExpressionValidator control.
+        /// ClienteIdTextBoxRegularExpressionValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator UsuarioIdTextBoxRegularExpressionValidator;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ClienteIdTextBoxRegularExpressionValidator;
 
         /// <summary>
         /// BtnBuscar control.
@@ -60,31 +60,31 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.TextBox FechaTextBox;
 
         /// <summary>
-        /// NombreTextBox control.
+        /// NombresTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NombreTextBox;
+        protected global::System.Web.UI.WebControls.TextBox NombresTextBox;
 
         /// <summary>
-        /// NombreRequiredFieldValidator control.
+        /// NombresRequiredFieldValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator NombreRequiredFieldValidator;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator NombresRequiredFieldValidator;
 
         /// <summary>
-        /// NombreRegularExpressionValidator control.
+        /// NombresRegularExpressionValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator NombreRegularExpressionValidator;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator NombresRegularExpressionValidator;
 
         /// <summary>
         /// SexoDropDownList control.
@@ -159,31 +159,31 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.CustomValidator CedulaCustomValidator;
 
         /// <summary>
-        /// NombreUserTextBox control.
+        /// DireccionTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NombreUserTextBox;
+        protected global::System.Web.UI.WebControls.TextBox DireccionTextBox;
 
         /// <summary>
-        /// NombreUserTextBoxRequiredFieldValidator control.
+        /// DireccionTextBoxRequiredFieldValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator NombreUserTextBoxRequiredFieldValidator;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator DireccionTextBoxRequiredFieldValidator;
 
         /// <summary>
-        /// NombreUserTextBoxRegularExpressionValidator control.
+        /// DireccionTextBoxRegularExpressionValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator NombreUserTextBoxRegularExpressionValidator;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator DireccionTextBoxRegularExpressionValidator;
 
         /// <summary>
         /// TelefonoTextBox control.
@@ -213,13 +213,13 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.RegularExpressionValidator TelefonoTextBoxRegularExpressionValidator;
 
         /// <summary>
-        /// TextBox1 control.
+        /// CelularTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox CelularTextBox;
 
         /// <summary>
         /// RequiredFieldValidator5 control.
@@ -240,22 +240,22 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 
         /// <summary>
-        /// TextBox2 control.
+        /// FechaNacimientoTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox FechaNacimientoTextBox;
 
         /// <summary>
-        /// TextBox3 control.
+        /// FechaRegistroTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox FechaRegistroTextBox;
 
         /// <summary>
         /// NuevoButton control.

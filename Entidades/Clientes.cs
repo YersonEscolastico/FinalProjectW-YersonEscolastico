@@ -22,6 +22,7 @@ namespace Entidades
         public string Telefono { get; set; }
         public string Celular { get; set; }
         public int UsuarioId { get; set; }
+        public DateTime Fecha { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public DateTime FechaRegistro { get; set; }
 
@@ -36,6 +37,7 @@ namespace Entidades
             Telefono = string.Empty;
             Celular = string.Empty;
             UsuarioId = 0;
+            Fecha = DateTime.Now;
             FechaNacimiento = DateTime.Now;
             FechaRegistro = DateTime.Now;
         }

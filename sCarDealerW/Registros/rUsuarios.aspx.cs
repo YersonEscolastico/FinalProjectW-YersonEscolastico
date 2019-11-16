@@ -17,6 +17,11 @@ namespace sCarDealerW.Registros
         protected void Page_Load(object sender, EventArgs e)
         {
             FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+
+            if (!Page.IsPostBack)
+            {
+                UsuarioIdTextBox.Text = "0";
+            }
         }
 
 
