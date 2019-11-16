@@ -24,6 +24,8 @@ namespace Entidades
         public decimal Precio { get; set; }
         public int UsuarioId { get; set; }
         public string Estado { get; set; }
+
+        public DateTime Fecha { get; set; }
         public DateTime FechaRegistro { get; set; }
 
         public Vehiculos()
@@ -40,6 +42,7 @@ namespace Entidades
             Precio = 0;
             UsuarioId = 0;
             Estado = string.Empty;
+            Fecha = DateTime.Now;
             FechaRegistro = DateTime.Now;
         }
     }

@@ -231,13 +231,13 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.RegularExpressionValidator DescripcionTextBoxRegularExpressionValidator;
 
         /// <summary>
-        /// PrecioIdTextBox control.
+        /// PrecioTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PrecioIdTextBox;
+        protected global::System.Web.UI.WebControls.TextBox PrecioTextBox;
 
         /// <summary>
         /// RequiredFieldValidator4 control.
@@ -258,13 +258,13 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
 
         /// <summary>
-        /// CostoIdTextBox control.
+        /// CostoTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CostoIdTextBox;
+        protected global::System.Web.UI.WebControls.TextBox CostoTextBox;
 
         /// <summary>
         /// RequiredFieldValidator5 control.
@@ -303,13 +303,13 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
 
         /// <summary>
-        /// TextBox2 control.
+        /// FechaRegistroTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox FechaRegistroTextBox;
 
         /// <summary>
         /// NuevoButton control.

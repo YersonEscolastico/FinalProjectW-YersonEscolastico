@@ -176,7 +176,6 @@ namespace sCarDealerW.Registros
                     }
                     else
                     {
-                        Clientes cl = new Clientes();
                         int id = Utils.ToInt(ClienteIdTextBox.Text);
                         RepositorioBase<Clientes> repository = new RepositorioBase<Clientes>();
                         u = repository.Buscar(id);

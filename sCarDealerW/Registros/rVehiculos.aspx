@@ -20,7 +20,7 @@
 
                  <%--Buscar Button--%>
                 <div class="col-sm-1 col-md-2 col-xs2">
-                    <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-sm" ValidationGroup="Buscar" />
+                    <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-sm" ValidationGroup="Buscar"  OnClick="BtnBuscar_Click" />
                 </div>
 
 
@@ -113,21 +113,21 @@
 
                 <%--Precio--%>
             <div class="form-group row">
-                <label class="control-label col-sm-2" for="PrecioIdTextBox">Precio:</label>
+                <label class="control-label col-sm-2" for="PrecioTextBox">Precio:</label>
                 <div class="col-sm-1 col-md-3 col-xs6">
-                    <asp:TextBox type="Number" class="form-control" ID="PrecioIdTextBox" Text="0" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="PrecioIdTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="PrecioIdTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
+                    <asp:TextBox type="Number" class="form-control" ID="PrecioTextBox" Text="0" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="PrecioTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="PrecioTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                 </div>
 
 
       <%--Costo--%>
             <div class="form-group row">
-                <label class="control-label col-sm-2" for="CostoIdTextBox">Costo:</label>
+                <label class="control-label col-sm-2" for="CostoTextBox">Costo:</label>
                 <div class="col-sm-1 col-md-3 col-xs6">
-                    <asp:TextBox type="Number" class="form-control" ID="CostoIdTextBox" Text="0" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="CostoIdTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="CostoIdTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
+                    <asp:TextBox type="Number" class="form-control" ID="CostoTextBox" Text="0" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="CostoTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="CostoTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                 </div>
                       </div>
           </div>
@@ -149,9 +149,9 @@
 
                 <%--Fecha Registro--%>
             <div class="form-group row">
-                <label class="control-label col-sm-2" for="FechaTextBox">Fecha Registro:</label>
+                <label class="control-label col-sm-2" for="FechaRegistroTextBox">Fecha Registro:</label>
                 <div class="col-sm-1 col-md-5">
-                    <asp:TextBox ID="TextBox2" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="True" />
+                    <asp:TextBox ID="FechaRegistroTextBox" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="False" />
                 </div>
             </div>
 
@@ -159,10 +159,10 @@
             <hr>
             <div class="panel">
                 <div class="text-center">
-                    <div class="form-group">
-                        <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" class="btn btn-primary" ValidationGroup="guardar" />
-                        <asp:Button ID="GuardarButton" runat="server" Text="Guardar" class="btn btn-success" ValidationGroup="guardar" />
-                        <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" class="btn btn-danger" ValidationGroup="Buscar" />
+                           <div class="form-group">
+                        <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" class="btn btn-primary" ValidationGroup="guardar" OnClick="BtnNuevo_Click" />
+                        <asp:Button ID="GuardarButton" runat="server" Text="Guardar" class="btn btn-success" ValidationGroup="guardar" OnClick="BtnGuardar_Click"  />
+                        <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" class="btn btn-danger" ValidationGroup="Buscar" OnClick="BtnEliminar_Click"  />
                     </div>
                 </div>
             </div>
