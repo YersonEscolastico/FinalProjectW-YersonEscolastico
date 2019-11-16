@@ -11,7 +11,7 @@
 
             <%--UsuarioId--%>
             <div class="form-group row">
-                <label class="control-label col-sm-2" for="UsuarioIdTextBox">Id:</label>
+                <label class="control-label col-sm-2" for="UsuarioIdTextBox">ID:</label>
                 <div class="col-sm-1 col-md-3 col-xs6">
                     <asp:TextBox type="Number" class="form-control" ID="UsuarioIdTextBox" Text="0" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="UsuarioIdTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="UsuarioIdTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
@@ -36,7 +36,7 @@
 
                     <%--Nombres--%>
                     <div class="form-group row">
-                        <label class="control-label col-sm-2" for="NombreTextBox">Nombre:</label>
+                        <label class="control-label col-sm-2" for="NombreTextBox">Nombres:</label>
                         <div class="col-sm-1 col-md-4">
                             <asp:TextBox type="text" class="form-control" ID="NombreTextBox" placeholder="Ingrese Nombres" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="NombreRequiredFieldValidator" runat="server" ErrorMessage="Ingrese algun nombre!" ValidationGroup="guardar" ControlToValidate="NombreTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
@@ -57,8 +57,8 @@
                         <div class="col-sm-1 col-md-4">
                             <asp:DropDownList ID="SexoDropDownList" runat="server" Class="form-control">
                                 <asp:ListItem Selected="True" Value="">Seleccione Uno</asp:ListItem>
-                                <asp:ListItem Text="Masculino"></asp:ListItem>
-                                <asp:ListItem Text="Femenino"></asp:ListItem>
+                                <asp:ListItem Text="Administrador"></asp:ListItem>
+                                <asp:ListItem Text="Usuario"></asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Sexo: Seleccione" ValidationGroup="Guardar" ControlToValidate="SexoDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
 
@@ -66,7 +66,7 @@
                         <%--Usuario--%>
                         <label class="control-label col-sm-1" for="NombreUserTextBox">Usuario:</label>
                         <div class="col-sm-1 col-md-4">
-                            <asp:TextBox type="text" class="form-control" ID="NombreUserTextBox" placeholder="Ingrese Nombre Usuario" runat="server"></asp:TextBox>
+                            <asp:TextBox type="text" class="form-control" ID="NombreUserTextBox" placeholder="Ingrese Nombre De Usuario" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="NombreUserTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Ingrese algun Telefono!" ValidationGroup="guardar" ControlToValidate="NombreUserTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre usuario">*</asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="NombreUserTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese algun Telefono!" ControlToValidate="NombreUserTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
                         </div>

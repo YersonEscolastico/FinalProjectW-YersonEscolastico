@@ -40,24 +40,30 @@
                         <div class="col-sm-1 col-md-4">
                             <asp:DropDownList ID="MarcaDropDownList" runat="server" Class="form-control">
                                 <asp:ListItem Selected="True" Value="">Seleccione Uno</asp:ListItem>
-                                <asp:ListItem Text="Masculino"></asp:ListItem>
-                                <asp:ListItem Text="Femenino"></asp:ListItem>
+                                <asp:ListItem Text="Ferrary."></asp:ListItem>
+                                <asp:ListItem Text="Jeep."></asp:ListItem>
+                                <asp:ListItem Text="Toyota."></asp:ListItem>
+                                <asp:ListItem Text="Aston Martin."></asp:ListItem>
+                                <asp:ListItem Text="Audi.."></asp:ListItem>
+                                <asp:ListItem Text="Bentley"></asp:ListItem>
+                                <asp:ListItem Text="BMW."></asp:ListItem>
+                                <asp:ListItem Text="Bugatti."></asp:ListItem>
+                                <asp:ListItem Text="Abarth."></asp:ListItem>
+                                <asp:ListItem Text="Honda"></asp:ListItem>
+                                <asp:ListItem Text="Lamborghini"></asp:ListItem>
+
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Marca: Seleccione" ValidationGroup="Guardar" ControlToValidate="MarcaDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
 
-                        <%--Modelo--%>
-                        <label class="control-label col-sm-1" for="ModeloUserTextBox">Modelo:</label>
+                        <%--Descripcion--%>
+                        <label class="control-label col-sm-1" for="DescripcionTextBox">Descripcion:</label>
                         <div class="col-sm-1 col-md-4">
-                            <asp:DropDownList ID="ModeloDropDownList" runat="server" Class="form-control">
-                                <asp:ListItem Selected="True" Value="">Seleccione Uno</asp:ListItem>
-                                <asp:ListItem Text="Masculino"></asp:ListItem>
-                                <asp:ListItem Text="Femenino"></asp:ListItem>
-                            </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Sexo: Seleccione" ValidationGroup="Guardar" ControlToValidate="ModeloDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <asp:TextBox type="DescripcionTextBox" class="form-control" ID="DescripcionTextBox" placeholder="Ingrese Nombre Usuario" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Ingrese algun Telefono!" ValidationGroup="guardar" ControlToValidate="DescripcionTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre usuario">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Ingrese algun Telefono!" ControlToValidate="DescripcionTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
                         </div>
                     </div>
-
 
                     <%--Color--%>
                     <div class="form-group row">
@@ -65,11 +71,18 @@
                         <div class="col-sm-1 col-md-4">
                             <asp:DropDownList ID="ColorDropDownList" runat="server" Class="form-control">
                                 <asp:ListItem Selected="True" Value="">Seleccione Uno</asp:ListItem>
-                                <asp:ListItem Text="Masculino"></asp:ListItem>
-                                <asp:ListItem Text="Femenino"></asp:ListItem>
+                                <asp:ListItem Text="Azul"></asp:ListItem>
+                                <asp:ListItem Text="Rojo"></asp:ListItem>
+                                <asp:ListItem Text="Amarillo"></asp:ListItem>
+                                <asp:ListItem Text="Blanco"></asp:ListItem>
+                                <asp:ListItem Text="Verde"></asp:ListItem>
+                                <asp:ListItem Text="Negro"></asp:ListItem>
+                                <asp:ListItem Text="Dorado"></asp:ListItem>
+                                <asp:ListItem Text="Plateado"></asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Sexo: Seleccione" ValidationGroup="Guardar" ControlToValidate="ColorDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
+
                         <%--Vin--%>
                         <label class="control-label col-sm-1" for="VinTextBox">Vin:</label>
                         <div class="col-sm-1 col-md-4">
@@ -78,15 +91,22 @@
                             <asp:RegularExpressionValidator ID="NombreRegularExpressionValidator" runat="server" ErrorMessage="Ingrese algun nombre!" ControlToValidate="VinTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
                         </div>
 
-
-                        <%--Placa--%>
-                        <label class="control-label col-sm-2" for="PlacaTextBox">Placa:</label>
+                        <br />
+                        <%--Modelo--%>
+                        <label class="control-label col-sm-2" for="ModeloUserTextBox">Modelo:</label>
                         <div class="col-sm-1 col-md-4">
-                            <asp:TextBox type="text" class="form-control" ID="PlacaTextBox" placeholder="Ingrese Nombres" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese algun nombre!" ValidationGroup="guardar" ControlToValidate="PlacaTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Ingrese algun nombre!" ControlToValidate="PlacaTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
-                        </div>
+                            <asp:DropDownList ID="ModeloDropDownList" runat="server" Class="form-control">
+                                <asp:ListItem Selected="True" Value="">Seleccione Uno</asp:ListItem>
+                                <asp:ListItem Text="Sedan"></asp:ListItem>
+                                <asp:ListItem Text="Deportivo"></asp:ListItem>
+                                <asp:ListItem Text="Familiar"></asp:ListItem>
+                                <asp:ListItem Text="Coupe"></asp:ListItem>
+                                <asp:ListItem Text="Todo Terreno"></asp:ListItem>
+                            </asp:DropDownList>
 
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Sexo: Seleccione" ValidationGroup="Guardar" ControlToValidate="ModeloDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                        <br />
                         <%--Anio--%>
                         <label class="control-label col-sm-1" for="AnioTextBox">Anio:</label>
                         <div class="col-sm-1 col-md-4">
@@ -95,58 +115,54 @@
                             <asp:RegularExpressionValidator ID="CedulaRegularExpressionValidator" runat="server" ErrorMessage="Ingrese alguna cedula!" ControlToValidate="AnioTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                             <asp:CustomValidator ID="AnioCustomValidator" runat="server" ControlToValidate="AnioTextBox" ErrorMessage="Introduzca Cedula Correcta" ValidationGroup="guardar" ClientValidationFunction="VerificarCantidad"></asp:CustomValidator>
                         </div>
-
-                        <%--Descripcion--%>
-                        <label class="control-label col-sm-2" for="DescripcionTextBox">Descripcion:</label>
+                        <br />
+                        <%--Placa--%>
+                        <label class="control-label col-sm-2" for="PlacaTextBox">Placa:</label>
                         <div class="col-sm-1 col-md-4">
-                            <asp:TextBox type="text" class="form-control" ID="DescripcionTextBox" placeholder="Ingrese Nombre Usuario" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="DescripcionTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Ingrese algun Telefono!" ValidationGroup="guardar" ControlToValidate="DescripcionTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre usuario">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="DescripcionTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese algun Telefono!" ControlToValidate="DescripcionTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
+                            <asp:TextBox type="PlacaTextBox" class="form-control" ID="PlacaTextBox" placeholder="Ingrese Nombres" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese algun nombre!" ValidationGroup="guardar" ControlToValidate="PlacaTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Ingrese algun nombre!" ControlToValidate="PlacaTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
                         </div>
-
-                        <%--Precio--%>
-                        <label class="control-label col-sm-1" for="PrecioTextBox">Precio:</label>
-                        <div class="col-sm-1 col-md-4">
-                            <asp:TextBox type="Number" class="form-control" ID="PrecioTextBox" Text="0" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="PrecioTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="PrecioTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
-                        </div>
-
-
-                        <%--Costo--%>
-
-                        <label class="control-label col-sm-2" for="CostoTextBox">Costo:</label>
-                        <div class="col-sm-1 col-md-4">
-                            <asp:TextBox type="Number" class="form-control" ID="CostoTextBox" Text="0" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="CostoTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="CostoTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
-                        </div>
-
-
+                        <br />
                         <%--Estado--%>
-
                         <label class="control-label col-sm-1" for="EstadoTextBox">Estado:</label>
                         <div class="col-sm-1 col-md-4">
                             <asp:DropDownList ID="EstadoDropDownList" runat="server" Class="form-control">
                                 <asp:ListItem Selected="True" Value="">Seleccione Uno</asp:ListItem>
-                                <asp:ListItem Text="Masculino"></asp:ListItem>
-                                <asp:ListItem Text="Femenino"></asp:ListItem>
+                                <asp:ListItem Text="Disponible"></asp:ListItem>
+                                <asp:ListItem Text="Vendido"></asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Estado: Seleccione" ValidationGroup="Guardar" ControlToValidate="EstadoDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                     </div>
-                    <%--Fecha Registro--%>
 
-                    <div class="form-group row">
-                        <label class="control-label col-sm-2" for="FechaRegistroTextBox">Fecha Registro:</label>
-                        <div class="col-sm-1 col-md-4">
-                            <asp:TextBox ID="FechaRegistroTextBox" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="False" />
-                        </div>
+                    <%--Costo--%>
+                    <label class="control-label col-sm-2" for="CostoTextBox">Costo:</label>
+                    <div class="col-sm-1 col-md-4">
+                        <asp:TextBox type="Number" class="form-control" ID="CostoTextBox" Text="0" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="CostoTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="CostoTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                     </div>
 
+                    <%--Precio--%>
+                    <label class="control-label col-sm-1" for="PrecioTextBox">Precio:</label>
+                    <div class="col-sm-1 col-md-4">
+                        <asp:TextBox type="Number" class="form-control" ID="PrecioTextBox" Text="0" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="PrecioTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="PrecioTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
+                    </div>
+
+                    <%--Fecha Registro--%>
+                    <label class="control-label col-sm-2" for="FechaRegistroTextBox">Fecha Registro:</label>
+                    <div class="col-sm-1 col-md-4">
+                        <asp:TextBox ID="FechaRegistroTextBox" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="False" />
+                    </div>
+                    <label class="control-label col-sm-1" for="hh"></label>
                 </div>
 
             </div>
+
+
             <%--Botones--%>
             <hr>
             <div class="panel">

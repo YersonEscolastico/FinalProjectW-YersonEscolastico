@@ -114,6 +114,7 @@
                                 <li><a href="/Registros/rUsuarios.aspx">Usuarios</a></li>
                                  <li><a href="/Registros/rCLientes.aspx">Clientes</a></li>
                                  <li><a href="/Registros/rVehiculos.aspx">Vehiculos</a></li>
+                                  <li><a href="/Registros/rVentas.aspx">Ventas</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -122,6 +123,7 @@
                                 <li><a href="/Consultas/eUsuarios.aspx">Usuarios</a></li>
                                  <li><a href="/Consultas/rCLientes.aspx">Clientes</a></li>
                                  <li><a href="/Consultas/rVehiculos.aspx">Vehiculos</a></li>
+                                  <li><a href="/Registros/rVentas.aspx">Ventas</a></li>
                             </ul>
                         </li>
                         <li><a href="#" style="font-family:Arial; font-size:16px">Ayuda</a></li>
