@@ -9,6 +9,8 @@
         <div class="panel-heading" style="font-family: Arial Black; font-size: 20px; text-align:center; color: Black">Registro de Usuarios</div>
     </div>
         <div class="form-horizontal col-md-12" role="form">
+
+                     <%--UsuarioId--%>
             <div class="form-group row">
                 <label class="control-label col-sm-2" for="UsuarioIdTextBox">Id:</label>
                 <div class="col-sm-1 col-md-3 col-xs6">
@@ -16,19 +18,21 @@
                     <asp:RequiredFieldValidator ID="UsuarioIdTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="UsuarioIdTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="UsuarioIdTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="UsuarioIdTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                 </div>
+
+                          <%--Buscar Button--%>
                 <div class="col-sm-1 col-md-2 col-xs2">
                     <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-sm" ValidationGroup="Buscar" />
                 </div>
          
 
-
+                          <%--Fecha--%>
                 <label class="col-sm-1 col-md-1 col-xs1" for="FechaTextBox">Fecha:</label>
                 <div class="col-sm-1 col-md-2">
                     <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="True" />
                 </div>
                    </div>
-            <br>
 
+                      <%--Nombres--%>
             <div class="form-group row">
                 <label class="control-label col-sm-3" for="NombreTextBox">Nombre:</label>
                 <div class="col-sm-1 col-md-5">
@@ -38,6 +42,30 @@
                 </div>
             </div>
 
+              <%--Correo--%>
+            <div class="form-group row">
+                <label class="control-label col-sm-3" for="CorreoTextBox">Email:</label>
+                <div class="col-sm-1 col-md-5">
+                    <asp:TextBox type="email" class="form-control" ID="CorreoTextBox" placeholder="Ingrese Correo Electronico" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese Correo Electronico!" ValidationGroup="guardar" ControlToValidate="CorreoTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Correo obligatorio&quot;&gt;Por favor llenar el campo Correo">*</asp:RequiredFieldValidator>
+                </div>
+            </div>
+
+            
+             <%--Nivel Acceso--%>
+            <div class="form-group row">
+                <label class="control-label col-sm-3" for="NombreUserTextBox">Nivel Acceso:</label>
+                <div class="col-sm-1 col-md-5">
+                    <asp:DropDownList ID="SexoDropDownList" runat="server" Class="form-control">
+                        <asp:ListItem Selected="True" Value="">Seleccione Uno</asp:ListItem>
+                        <asp:ListItem Text="Masculino"></asp:ListItem>
+                        <asp:ListItem Text="Femenino"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Sexo: Seleccione" ValidationGroup="Guardar" ControlToValidate="SexoDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
+                </div>
+            </div>
+
+                         <%--Usuario--%>
             <div class="form-group row">
                 <label class="control-label col-sm-3" for="NombreUserTextBox">Nombre Usuario:</label>
                 <div class="col-sm-1 col-md-5">
@@ -47,34 +75,8 @@
                 </div>
             </div>
 
-            <div class="form-group row">
-                <label class="control-label col-sm-3" for="CedulaTextBox">Cedula:</label>
-                <div class="col-sm-1 col-md-5">
-                    <asp:TextBox type="text" class="form-control" ID="CedulaTextBox" placeholder="Ingrese Cedula" runat="server" MaxLength="11"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="CedulaRequiredFieldValidator" runat="server" ErrorMessage="Ingrese alguna cedula!" ValidationGroup="guardar" ControlToValidate="CedulaTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="CedulaRegularExpressionValidator" runat="server" ErrorMessage="Ingrese alguna cedula!" ControlToValidate="CedulaTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
-                    <asp:CustomValidator ID="CedulaCustomValidator" runat="server" ControlToValidate="CedulaTextBox" ErrorMessage="Introduzca Cedula Correcta" ValidationGroup="guardar" ClientValidationFunction="VerificarCantidad"></asp:CustomValidator>
-                </div>
-            </div>
 
-            <div class="form-group row">
-                <label class="control-label col-sm-3" for="TelefonoTextBox">Telefono:</label>
-                <div class="col-sm-1 col-md-5">
-                    <asp:TextBox type="text" class="form-control" ID="TelefonoTextBox" placeholder="Ingrese Telefono" MaxLength="10" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="TelefonoTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Ingrese algun nombre!" ValidationGroup="guardar" ControlToValidate="TelefonoTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="TelefonoTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese algun nombre!" ControlToValidate="TelefonoTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="control-label col-sm-3" for="CorreoTextBox">Correo:</label>
-                <div class="col-sm-1 col-md-5">
-                    <asp:TextBox type="email" class="form-control" ID="CorreoTextBox" placeholder="Ingrese Correo Electronico" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese Correo Electronico!" ValidationGroup="guardar" ControlToValidate="CorreoTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Correo obligatorio&quot;&gt;Por favor llenar el campo Correo">*</asp:RequiredFieldValidator>
-                </div>
-            </div>
-
-            <br>
+                 <%--Contrasena--%>
             <div class="form-group row">
                 <label class="control-label col-sm-3" for="ContraseñaTextBox">Contraseña:</label>
                 <div class="col-sm-1 col-md-5">
@@ -83,7 +85,7 @@
                 </div>
             </div>
 
-            <br>
+                      <%--Confirmar Contraseña--%>
             <div class="form-group row">
                 <label class="control-label col-sm-3" for="VContraseñaTextBox">Confirme Contraseña:</label>
                 <div class="col-sm-1 col-md-5">
@@ -92,7 +94,7 @@
                 </div>
             </div>
 
-            <br>
+              <%--Total Ventas--%>
             <div class="form-group row">
                 <label class="control-label col-sm-3" for="TotalVendidoTextBox">Total Ventas:</label>
                 <div class="col-sm-1 col-md-5">
