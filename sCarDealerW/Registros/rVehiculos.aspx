@@ -4,37 +4,36 @@
 
     <div class="container">
 
-        <div class="panel panel-primary">
-            <div class="panel-body">
+        <div class="panel" style="background-color: #0094ff">
+            <div class="panel-heading" style="font-family: Arial Black; font-size: 20px; text-align: center; color: Black">Registro de Vehiculos</div>
+        </div>
+        <div class="form-horizontal col-md-12" role="form">
 
-                <div class="panel" style="background-color: #0094ff">
-                    <div class="panel-heading" style="font-family: Arial Black; font-size: 20px; text-align: center; color: Black">Registro de Vehiculos</div>
+            <%--VehiculoId--%>
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="VehiculoIdTextBox">Id:</label>
+                <div class="col-sm-1 col-md-3 col-xs6">
+                    <asp:TextBox type="Number" class="form-control" ID="VehiculoIdTextBox" Text="0" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="VehiculoIdTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="VehiculoIdTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="VehiculoIdTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="VehiculoIdTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                 </div>
-                <div class="form-horizontal col-md-12" role="form">
 
-                    <%--VehiculoId--%>
-                    <div class="form-group row">
-                        <label class="control-label col-sm-2" for="VehiculoIdTextBox">Id:</label>
-                        <div class="col-sm-1 col-md-3 col-xs6">
-                            <asp:TextBox type="Number" class="form-control" ID="VehiculoIdTextBox" Text="0" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="VehiculoIdTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="VehiculoIdTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="VehiculoIdTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="VehiculoIdTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
-                        </div>
-
-                        <%--Buscar Button--%>
-                        <div class="col-sm-1 col-md-2 col-xs2">
-                            <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-sm" ValidationGroup="Buscar" OnClick="BtnBuscar_Click" />
-                        </div>
+                <%--Buscar Button--%>
+                <div class="col-sm-1 col-md-2 col-xs2">
+                    <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-sm" ValidationGroup="Buscar" OnClick="BtnBuscar_Click" />
+                </div>
 
 
-                        <%--Fecha--%>
-                        <label class="col-sm-1 col-md-1 col-xs1" for="FechaTextBox">Fecha:</label>
-                        <div class="col-sm-1 col-md-2">
-                            <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="True" />
-                        </div>
-                    </div>
+                <%--Fecha--%>
+                <label class="col-sm-1 col-md-1 col-xs1" for="FechaTextBox">Fecha:</label>
+                <div class="col-sm-1 col-md-2">
+                    <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="True" />
+                </div>
+            </div>
 
 
+            <div class="panel panel-primary">
+                <div class="panel-body">
                     <%--Marca--%>
                     <div class="form-group row">
                         <label class="control-label col-sm-2" for="MarcaUserTextBox">Marca:</label>

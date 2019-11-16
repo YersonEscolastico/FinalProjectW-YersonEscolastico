@@ -110,6 +110,7 @@
     <Content Include="Registros\rClientes.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Registros\rVehiculos.aspx" />
+    <Content Include="Registros\rVentas.aspx" />
     <Content Include="Resources\hh.ico" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -209,6 +210,13 @@
     </Compile>
     <Compile Include="Registros\rVehiculos.aspx.designer.cs">
       <DependentUpon>rVehiculos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rVentas.aspx.cs">
+      <DependentUpon>rVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rVentas.aspx.designer.cs">
+      <DependentUpon>rVentas.aspx</DependentUpon>
     </Compile>
     <Compile Include="SiteMaster.Master.cs">
       <DependentUpon>SiteMaster.Master</DependentUpon>

@@ -1,36 +1,36 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true" CodeBehind="rClientes.aspx.cs" Inherits="sCarDealerW.Registros.rClientes" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container">
-        <div class="panel panel-primary">
-            <div class="panel-body">
 
-                <div class="panel" style="background-color: #0094ff">
-                    <div class="panel-heading" style="font-family: Arial Black; font-size: 20px; text-align: center; color: Black">Registro de Clientes</div>
+        <div class="panel" style="background-color: #0094ff">
+            <div class="panel-heading" style="font-family: Arial Black; font-size: 20px; text-align: center; color: Black">Registro de Clientes</div>
+        </div>
+        <div class="form-horizontal col-md-12" role="form">
+
+            <%--ClienteId--%>
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="ClienteIdTextBox">Id:</label>
+                <div class="col-sm-1 col-md-3 col-xs6">
+                    <asp:TextBox type="Number" class="form-control" ID="ClienteIdTextBox" Text="0" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="ClienteIdTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="ClienteIdTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="ClienteIdTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="ClienteIdTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                 </div>
-                <div class="form-horizontal col-md-12" role="form">
 
-                    <%--ClienteId--%>
-                    <div class="form-group row">
-                        <label class="control-label col-sm-2" for="ClienteIdTextBox">Id:</label>
-                        <div class="col-sm-1 col-md-3 col-xs6">
-                            <asp:TextBox type="Number" class="form-control" ID="ClienteIdTextBox" Text="0" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="ClienteIdTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="ClienteIdTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="ClienteIdTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="ClienteIdTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
-                        </div>
+                <%--Buscar Button--%>
+                <div class="col-sm-1 col-md-2 col-xs2">
+                    <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-sm" ValidationGroup="Buscar" OnClick="BtnBuscar_Click" />
+                </div>
 
-                        <%--Buscar Button--%>
-                        <div class="col-sm-1 col-md-2 col-xs2">
-                            <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-sm" ValidationGroup="Buscar" OnClick="BtnBuscar_Click" />
-                        </div>
+                <%--Fecha--%>
+                <label class="col-sm-1 col-md-1 col-xs1" for="FechaTextBox">Fecha:</label>
+                <div class="col-sm-1 col-md-2">
+                    <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="True" />
+                </div>
+            </div>
 
-                        <%--Fecha--%>
-                        <label class="col-sm-1 col-md-1 col-xs1" for="FechaTextBox">Fecha:</label>
-                        <div class="col-sm-1 col-md-2">
-                            <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="True" />
-                        </div>
-                    </div>
+            <div class="panel panel-primary">
+                <div class="panel-body">
 
                     <%--Nombres--%>
                     <div class="form-group row">
@@ -107,7 +107,8 @@
 
                     </div>
                 </div>
-
+            </div>
+        </div>
                 <%--Botones--%>
                 <hr>
                 <div class="panel">
@@ -121,9 +122,8 @@
                 </div>
                 <script type="text/javascript"> function VerificarCantidad(sender, args) { args.IsValid = (args.Value.length <= 11); }</script>
                 <hr>
-            </div>
-        </div>
     </div>
+
 </asp:Content>
 
 
