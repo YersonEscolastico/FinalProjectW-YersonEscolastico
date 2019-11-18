@@ -14,6 +14,7 @@ namespace Entidades
         public int VentaId { get; set; }
         public int ClienteId { get; set; }
         public int UsuarioId { get; set; }
+        public int VehiculoId { get; set; }
         public decimal Total { get; set; }
         public decimal SubTotal { get; set; }
         public DateTime FechaVenta { get; set; }
@@ -28,6 +29,7 @@ namespace Entidades
             Total = 0;
             ClienteId = 0;
             UsuarioId = 0;
+            VehiculoId = 0;
             FechaVenta = DateTime.Now;
             FechaRegistro = DateTime.Now;
             SubTotal = 0;
@@ -47,6 +49,7 @@ namespace Entidades
                 total += item.SubTotal;
             }
             Total = total;
+            SubTotal = total;
         }
     }
 }

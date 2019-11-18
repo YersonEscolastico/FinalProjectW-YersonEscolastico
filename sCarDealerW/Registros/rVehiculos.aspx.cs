@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Entidades;
+using sCarDealerW.Utilitarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,6 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using yCarDealerSFM.Utilitarios;
 
 namespace sCarDealerW.Registros
 {
@@ -75,8 +75,8 @@ namespace sCarDealerW.Registros
             u.Placa = PlacaTextBox.Text;
             u.Anio = AnioTextBox.Text;
             u.Descripcion = DescripcionTextBox.Text;
-            u.Precio = Utils.ToDecimal(  PrecioTextBox.Text);
-            u.Costo = Utils.ToDecimal(CostoTextBox.Text);
+            u.Precio = Convert.ToDecimal(  PrecioTextBox.Text);
+            u.Costo = Convert.ToDecimal(CostoTextBox.Text);
             u.Descripcion = DescripcionTextBox.Text;
             u.Estado = EstadoDropDownList.Text;
             return u;

@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Entidades;
+using sCarDealerW.Utilitarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,6 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using yCarDealerSFM.Utilitarios;
 
 namespace sCarDealerW.Registros
 {
@@ -63,7 +63,7 @@ namespace sCarDealerW.Registros
             u.Usuarioss = NombreUserTextBox.Text;
             u.Email = CorreoTextBox.Text;
             u.Clave = ContraseñaTextBox.Text;
-            u.TotalVentas = Utils.ToDecimal(TotalVendidoTextBox.Text);
+            u.TotalVentas = Convert.ToDecimal(TotalVendidoTextBox.Text);
 
             return u;
         }

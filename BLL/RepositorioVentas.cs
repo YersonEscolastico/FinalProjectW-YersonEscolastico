@@ -115,21 +115,24 @@ namespace BLL
             return entity;
         }
 
+
         public static bool Eliminar(int id)
         {
             bool paso = false;
             Contexto db = new Contexto();
             RepositorioBase<Usuarios> cl = new RepositorioBase<Usuarios>();
             Ventas ventas = new Ventas();
-
+            Vehiculos v = new Vehiculos();
             try
             {
-                string estado = "Disponible";
-                foreach (var item in ventas.Detalle)
+                if (v.Estado == "Vendido")
                 {
-                    db.Vehiculos.Find(item.VehiculoId).Estado = estado;
+                    string estado = "Disponible";
+                    foreach (var item in ventas.Detalle)
+                    {
+                        db.Vehiculos.Find(item.VehiculoId).Estado = estado;
+                    }
                 }
-
                 var Ventas = db.Ventas.Find(id);
                 var clientes = cl.Buscar(Ventas.VentaId);
                 db.Usuarios.Find(Ventas.UsuarioId).TotalVentas -= Ventas.Total;
@@ -146,5 +149,7 @@ namespace BLL
             }
             return paso;
         }
+
+
     }
 }

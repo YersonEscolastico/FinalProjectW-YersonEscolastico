@@ -42,13 +42,13 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.RegularExpressionValidator VentaIdTextBoxRegularExpressionValidator;
 
         /// <summary>
-        /// BuscarButton control.
+        /// BtnBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BuscarButton;
+        protected global::System.Web.UI.WebControls.Button BtnBuscar;
 
         /// <summary>
         /// FechaTextBox control.
@@ -141,24 +141,6 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.GridView VentasGridView;
 
         /// <summary>
-        /// Label6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
-
-        /// <summary>
-        /// TotalLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TotalLabel;
-
-        /// <summary>
         /// Label control.
         /// </summary>
         /// <remarks>
@@ -177,13 +159,22 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.Label SubtotalLabel;
 
         /// <summary>
-        /// ButtonImprimir control.
+        /// Label6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonImprimir;
+        protected global::System.Web.UI.WebControls.Label Label6;
+
+        /// <summary>
+        /// TotalLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TotalLabel;
 
         /// <summary>
         /// NuevoButton control.

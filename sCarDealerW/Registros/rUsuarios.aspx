@@ -27,8 +27,8 @@
                 <%--Fecha--%>
                 <label class="col-sm-1 col-md-1 col-xs1" for="FechaTextBox">Fecha:</label>
                 <div class="col-sm-1 col-md-2">
-                    <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="True" />
-                </div>
+                    <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" disabled = "disabled"  />
+                </div> 
             </div>
 
             <div class="panel panel-primary">
