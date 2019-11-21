@@ -18,12 +18,12 @@
                     <asp:RegularExpressionValidator ID="VentaIdTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="VentaIdTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                 </div>
 
-                       <%--Buscar Button--%>
+                <%--Buscar Button--%>
                 <div class="col-sm-1 col-md-2 col-xs2">
                     <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-sm" ValidationGroup="Buscar" OnClick="BuscarButton_Click" />
                 </div>
 
-                   <%--Fecha--%>
+                <%--Fecha--%>
                 <label class="col-sm-1 col-md-1 col-xs1" for="FechaTextBox">Fecha:</label>
                 <div class="col-sm-1 col-md-2">
                     <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" />
@@ -32,7 +32,7 @@
                 <%--Uauarios--%>
                 <label class="control-label col-sm-1" for="UsuarioTextBox">Usuario:</label>
                 <div class="col-sm-1 col-md-2 col-xs2">
-                    <asp:DropDownList class="form-control" ID="UsuarioDropDownList" disabled = "disabled"  Increment="0" runat="server"></asp:DropDownList>
+                    <asp:DropDownList class="form-control" ID="UsuarioDropDownList" disabled="disabled" Increment="0" runat="server"></asp:DropDownList>
 
                 </div>
             </div>
@@ -59,9 +59,9 @@
                 <div class="panel-body">
                     <%--Vehiculo--%>
                     <div class="form-group row">
-                        <label class="control-label col-sm-2"  for="VehiculoTextBox">Vehiculo:</label>
+                        <label class="control-label col-sm-2" for="VehiculoTextBox">Vehiculo:</label>
                         <div class="col-sm-1 col-md-3 col-xs4">
-                            <asp:DropDownList class="form-control" ID="VehiculoDropDownList"  AutoPostBack="true" runat="server" OnSelectedIndexChanged="PrecioDropDown_SelectedIndexChanged"> </asp:DropDownList>
+                            <asp:DropDownList class="form-control" ID="VehiculoDropDownList" AutoPostBack="true" runat="server" OnSelectedIndexChanged="PrecioDropDown_SelectedIndexChanged"></asp:DropDownList>
                         </div>
 
                         <%--Precio--%>
@@ -78,52 +78,38 @@
                     </div>
 
 
-                                 <%--Grid--%>
-                     <div class="col row">
-                <asp:GridView ID="VentasGridView" runat="server" class="table table-condensed table-bordered table-responsive" CellPadding="4" ForeColor="#0066FF" GridLines="None" OnPageIndexChanging="VentasGridView_PageIndexChanging" OnRowCommand="VentasGridVie_RowCommand">
-                    <AlternatingRowStyle BackColor="#999999" />
-                    <Columns>
-                        <asp:TemplateField ShowHeader="False" HeaderText="Opciones">
-                            <ItemTemplate>
-                                <asp:Button ID="Remover" runat="server" CausesValidation="false" CommandName="Select" CommandArgument="<%# ((GridViewRow) Container).DataItemIndex %>"
-                                    Text="Remover" class="btn btn-danger btn-sm"/>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                    <EditRowStyle BackColor="#2461BF" />
-                    <FooterStyle BackColor="#005a65" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#005a65" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#EFF3FB" />
-                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                </asp:GridView>
-            </div>
+                    <%--Grid--%>
+                    <div class="table-responsive">
+                        <div class="center">
+                            <asp:GridView ID="VentasGridView"
+                                runat="server"
+                                class="table table-condensed table-bordered table-responsive"
+                                CellPadding="4" ForeColor="#333333" GridLines="None">
 
-                    
-                                 <%--Subtotal--%>
-                    <div class="text-center">
-                        <div class="form-group row">
-                            <asp:Label ID="Label" runat="server" Text="SubTotal:" Font-Bold="True" Font-Italic="True"></asp:Label>
-                            <asp:Label ID="SubtotalLabel" runat="server" AutoPostback="true" Text=""></asp:Label>
+                                <AlternatingRowStyle BackColor="White" />
+                                <Columns>
+                                    <asp:TemplateField ShowHeader="False" HeaderText="Remover">
+                                        <ItemTemplate>
+                                            <asp:Button ID="RemoveLinkButton" runat="server" CausesValidation="false" CommandName="Select"
+                                                Text="Remover " class="btn btn-success btn-sm" OnClick="RemoveLinkButton_Click" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
+                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                <RowStyle BackColor="#EFF3FB" />
+                            </asp:GridView>
                         </div>
                     </div>
-
-                    
-                                 <%--Total--%>
-                    <div class="text-center">
                         <div class="form-group">
-                            <asp:Label ID="Label6" runat="server" Text="Total:" Font-Bold="True" Font-Italic="True"></asp:Label>
-                            <asp:Label ID="TotalLabel" runat="server" AutoPostback="true" Text=""></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label for="Total:" class="col-md-3 control-label input-sm">Total: </label>
+                        <div class="col-md-4">
+                            <asp:TextBox class="form-control input-sm" ReadOnly="True" ID="TotalTextBox" Text="0" runat="server"></asp:TextBox>
                         </div>
                     </div>
-                </div>
-
             </div>
 
+            </div>
+                
 
             <hr>
             <div class="panel">

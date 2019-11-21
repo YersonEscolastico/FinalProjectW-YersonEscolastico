@@ -36,9 +36,9 @@ namespace Entidades
            this.Detalle = new List<VentasDetalle>();
         }
 
-        public void AgregarDetalle(int ventasDetalleID, int ventaId, int vehiculoId, decimal subtotal, string descripcion, decimal precio)
+        public void AgregarDetalle(int ventaId, int vehiculoId, decimal subtotal, string descripcion)
         {
-            this.Detalle.Add(new VentasDetalle(ventasDetalleID, ventaId, vehiculoId, subtotal,descripcion));
+            this.Detalle.Add(new VentasDetalle(ventaId, vehiculoId, subtotal,descripcion));
         }
         public void CalcularMonto()
         {
@@ -49,7 +49,10 @@ namespace Entidades
                 total += item.SubTotal;
             }
             Total = total;
-            SubTotal = total;
+        }
+        public void RemoverDetalle(int Index)
+        {
+            this.Detalle.RemoveAt(Index);
         }
     }
 }

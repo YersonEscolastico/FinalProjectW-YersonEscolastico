@@ -20,20 +20,16 @@ namespace sCarDealerW.Registros
         {
             if (!Page.IsPostBack)
             {
-                VentasGridView.DataSource = null;
-                VentasGridView.DataBind();
-                VentaIdTextBox.Text = "0";
-                PrecioTextBox.Text = "0";
-                SubtotalLabel.Text = "0";
-                TotalLabel.Text = "0";
+                LimpiarCampos();
                 FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 LlenarDropDownList();
+
+                ViewState["Ventas"] = new Ventas();
             }
         }
-
         protected void BindGrid()
         {
-            if (ViewState["AnVentasalisis"] != null)
+            if (ViewState["Ventas"] != null)
             {
                 VentasGridView.DataSource = ((Ventas)ViewState["Ventas"]).Detalle;
                 VentasGridView.DataBind();
@@ -48,61 +44,57 @@ namespace sCarDealerW.Registros
         public void LimpiarCampos()
     {
             VentaIdTextBox.Text = "0";
-            ClienteDropDownList.SelectedIndex = 0;
-            UsuarioDropDownList.SelectedIndex = 0;
-            FechaRegistroTextBox.Text = "";
-            VehiculoDropDownList.SelectedIndex = 0;
             PrecioTextBox.Text = "0";
-            TotalLabel.Text = 0.ToString();
-            SubtotalLabel.Text = 0.ToString();
+            TotalTextBox.Text = 0.ToString();
             FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             FechaRegistroTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            ViewState["Ventas"] = new Ventas();
             VentasGridView.DataSource = null;
-            VentasGridView.DataBind();
-            Ventas Servicios = new Ventas();
+            this.BindGrid();
+ 
         }
 
 
     public void LlenarCampos(Ventas ventas)
     {
-        decimal precio = ventas.Total;
 
-        if (precio < 0)
+            int id;
+            RepositorioBase<Vehiculos> db = new RepositorioBase<Vehiculos>();
+            Vehiculos s = new Vehiculos();
+            int.TryParse(VehiculoDropDownList.SelectedValue, out id);
+            s = db.Buscar(id);
+            decimal precio = s.Precio;
+
+            if (precio < 0)
             precio = precio * (-1);
        
             VentaIdTextBox.Text = ventas.VentaId.ToString();
             ClienteDropDownList.Text = ventas.ClienteId.ToString();
-            UsuarioDropDownList.Text = ventas.UsuarioId.ToString();
-            TotalLabel.Text = ventas.Total.ToString();
-            SubtotalLabel.Text = ventas.SubTotal.ToString();
-            PrecioTextBox.Text = Convert.ToString(precio);
+            TotalTextBox.Text = ventas.Total.ToString();
+            PrecioTextBox.Text = Convert.ToString(s.Precio);
             FechaRegistroTextBox.Text = ventas.FechaRegistro.ToString("yyyy-MM-dd");
-            ViewState["VentasDetalle"] = ventas.Detalle;
-            VentasGridView.DataSource = ViewState["VentasDetalle"];
-            VentasGridView.DataBind();
-    }
+            ViewState["Ventas"] = ventas;
+            this.BindGrid();
+        }
 
     private Ventas LlenaClase()
     {
             Ventas ventas = new Ventas();
-
+            ventas = (Ventas)ViewState["Ventas"];
             ventas.FechaVenta = DateTime.Now;
             ventas.FechaRegistro = DateTime.Now;
             ventas.VentaId = Utils.ToInt(VentaIdTextBox.Text);
             ventas.ClienteId = Utils.ToInt(ClienteDropDownList.Text);
             ventas.UsuarioId = Utils.ToInt(UsuarioDropDownList.Text);
-            ventas.Total = Convert.ToDecimal(TotalLabel.Text);
-            ventas.SubTotal = Convert.ToDecimal(SubtotalLabel.Text);
-            ventas.Detalle = (List<VentasDetalle>)ViewState["VentasDetalle"];
-
+            ventas.VehiculoId = Utils.ToInt(VehiculoDropDownList.Text);
+            ventas.Total = Convert.ToDecimal(TotalTextBox.Text);
             return ventas;
     }
 
     private bool ExisteEnLaBaseDeDatos()
     {
-            RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
-            Ventas Servicios = db.Buscar(Convert.ToInt32(VentaIdTextBox.Text));
-            return (Servicios != null);
+            Ventas ventas = RepositorioVentas.Buscar(Convert.ToInt32(VentaIdTextBox.Text));
+            return (ventas != null);
 
     }
 
@@ -125,19 +117,22 @@ namespace sCarDealerW.Registros
                     return;
                 }
                 paso = RepositorioVentas.Modificar(ventas);
+                Utilitarios.Utils.ShowToastr(this.Page, "Modificado", "Exito", "success");
+                LimpiarCampos();
+                return;
             }
 
             if (paso)
                 Utilitarios.Utils.ShowToastr(this.Page, " Se ha Guardado", "Exito", "success");
             else
-                Utilitarios.Utils.ShowToastr(this.Page, "Se profujo un error al guardar", "Error", "error");
+                Utilitarios.Utils.ShowToastr(this.Page, "Se profujo un error", "Error", "error");
             LimpiarCampos();
-     }
+        }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Ventas> repositorio = new RepositorioBase<Ventas>();
-            Ventas ventas = repositorio.Buscar(Utils.ToInt(VentaIdTextBox.Text));
+        
+            Ventas ventas = RepositorioVentas.Buscar(Utils.ToInt(VentaIdTextBox.Text));
 
             if (ventas != null)
             {
@@ -157,9 +152,9 @@ namespace sCarDealerW.Registros
             }
         }
 
+
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
-            RepositorioVentas repositorio = new RepositorioVentas();
             int id = Utils.ToInt(VentaIdTextBox.Text);
 
             var Ventas = RepositorioVentas.Buscar(id);
@@ -187,36 +182,37 @@ namespace sCarDealerW.Registros
         {
             List<VentasDetalle> detalle = new List<VentasDetalle>();
             Ventas venta = new Ventas();
-
+            decimal total = 0;
             RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
             Vehiculos vehiculos = new Vehiculos();
+
             int id = ToInt(VehiculoDropDownList.SelectedValue);
             vehiculos = repositorio.Buscar(id);
 
+            venta = (Ventas)ViewState["Ventas"];
 
-            if (IsValid)
+            DateTime date = DateTime.Now.Date;
+            decimal precio = Convert.ToDecimal(PrecioTextBox.Text);
+            int VehiculoId = Utils.ToInt(VehiculoDropDownList.SelectedValue);
+            var subtotal = vehiculos.Precio = Convert.ToDecimal(PrecioTextBox.Text);
+            string descripcion = VehiculoDropDownList.SelectedItem.ToString();
+
+            venta.Detalle.Add(new VentasDetalle(Convert.ToInt32(VentaIdTextBox.Text), VehiculoId, subtotal, descripcion));
+
+            ViewState["Ventas"] = venta;
+            this.BindGrid();
+            TotalTextBox.Text = total.ToString();
+
+            foreach (var item in venta.Detalle)
             {
-                DateTime date = DateTime.Now.Date;
-                decimal precio = Convert.ToDecimal(PrecioTextBox.Text);
-                int VehiculoId = Utils.ToInt(VehiculoDropDownList.SelectedValue);
-                var subtotal = vehiculos.Precio = Convert.ToDecimal(PrecioTextBox.Text);
-                string descripcion = VehiculoDropDownList.SelectedItem.ToString();
-
-                if (VentasGridView.Rows.Count != 0)
-                {
-                    venta.Detalle = (List<VentasDetalle>)ViewState["VentasDetalle"];
-                }
-                VentasDetalle vd = new VentasDetalle();
-                venta.Detalle.Add(new VentasDetalle(0, vd.VentaId, VehiculoId, subtotal, descripcion));
-
-                ViewState["VentasDetalle"] = venta.Detalle;
-                VentasGridView.DataSource = ViewState["VentasDetalle"];
-                VentasGridView.DataBind();
-                LlenaValores();
-                CalTotal();
+                total += item.SubTotal;
             }
+            TotalTextBox.Text = total.ToString();
+            CalTotal();
         }
+        
 
+      
         private void CalTotal()
         {
             List<VentasDetalle> detalle = new List<VentasDetalle>();
@@ -231,30 +227,13 @@ namespace sCarDealerW.Registros
             {
                 Total += item.SubTotal;
             }
-            TotalLabel.Text = Total.ToString();
-            SubtotalLabel.Text = Total.ToString();
+            TotalTextBox.Text = Total.ToString();
         }
 
-
-        private void LlenaValores()
-        {
-            RepositorioVentas repositorio = new RepositorioVentas();
-            decimal total = 0;
-            decimal SubTotal = 0;
-
-            List<VentasDetalle> lista = (List<VentasDetalle>)ViewState["VentasDetalle"];
-            foreach (var item in lista)
-            {
-                total += item.SubTotal;
-            }
-            TotalLabel.Text = total.ToString();
-            SubtotalLabel.Text = SubTotal.ToString();
-        }
 
         private void VaciaValores()
         {
-            decimal total = Utils.ToDecimal(TotalLabel.Text);
-            decimal Sub = Utils.ToDecimal(SubtotalLabel.Text);
+            decimal total = Utils.ToDecimal(TotalTextBox.Text);
             decimal total2 = 0;
             List<VentasDetalle> lista = (List<VentasDetalle>)ViewState["VentasDetalle"];
             foreach (var item in lista)
@@ -262,10 +241,8 @@ namespace sCarDealerW.Registros
                 total2 = item.SubTotal;
             }
             total = total - total2;
-            Sub = Sub - total2;
 
-            TotalLabel.Text = total.ToString();
-            SubtotalLabel.Text = total.ToString();
+            TotalTextBox.Text = total.ToString();
         }
 
         protected void PrecioDropDown_SelectedIndexChanged(object sender, EventArgs e)
@@ -285,21 +262,29 @@ namespace sCarDealerW.Registros
             VentasGridView.DataBind();
         }
 
-        protected void VentasGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void RemoveLinkButton_Click(object sender, EventArgs e)
         {
-            if (e.CommandName == "Select")
-            {
-                int index = Convert.ToInt32(e.CommandArgument);
-                Expression<Func<Vehiculos, bool>> filtro = p => true;
-                RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
-                var lista = repositorio.GetList(c => true);
-                var combos = repositorio.Buscar(lista[index].VehiculoId);
 
-                VaciaValores();
-                ((List<VentasDetalle>)ViewState["VentasDetalle"]).RemoveAt(index);
-                VentasGridView.DataSource = ViewState["VentasDetalle"];
-                VentasGridView.DataBind();
+            decimal total = Utils.ToDecimal(TotalTextBox.Text);
+            if (VentasGridView.Rows.Count > 0 && VentasGridView.SelectedIndex >= 0)
+            {
+                Ventas entrada = new Ventas();
+                entrada = (Ventas)ViewState["Ventas"];
+
+                GridViewRow row = (sender as Button).NamingContainer as GridViewRow;
+                entrada.RemoverDetalle(row.RowIndex);
+                ViewState["Ventas"] = entrada;
+                this.BindGrid();
+
+                foreach (var item in entrada.Detalle)
+                {
+                    total -= item.SubTotal;
+                }
+                TotalTextBox.Text = total.ToString();
+                CalTotal();
+
             }
+
         }
 
 
@@ -308,7 +293,6 @@ namespace sCarDealerW.Registros
             if (e.CommandName == "Select")
             {
                 int index = Convert.ToInt32(e.CommandArgument);
-                Expression<Func<Vehiculos, bool>> filtro = p => true;
                 RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
                 var lista = repositorio.GetList(c => true);
                 var combos = repositorio.Buscar(lista[index].VehiculoId);

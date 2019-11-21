@@ -11,7 +11,7 @@
             <%--ClienteId--%>
             <div class="form-group row">
                 <label class="control-label col-sm-2" for="ClienteIdTextBox">Id:</label>
-                <div class="col-sm-1 col-md-3 col-xs6">
+                <div class="col-sm-1 col-md-3 col-xs6 lg-6">
                     <asp:TextBox type="Number" class="form-control" ID="ClienteIdTextBox" Text="0" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="ClienteIdTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="ClienteIdTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="ClienteIdTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="ClienteIdTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>

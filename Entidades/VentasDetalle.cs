@@ -16,7 +16,6 @@ namespace Entidades
         public string Descripcion { get; set; }
         public decimal SubTotal { get; set; }
 
-        [ForeignKey("VehiculoId")]
         public virtual Vehiculos Vehiculos { get; set; }
 
         public VentasDetalle()
@@ -28,9 +27,8 @@ namespace Entidades
             SubTotal = 0;
         }
 
-        public VentasDetalle(int ventasDetalleID, int ventaId, int vehiculoId, decimal subtotal, string descripcion)
+        public VentasDetalle(int ventaId, int vehiculoId, decimal subtotal, string descripcion)
         {
-            VentasDetalleID = ventasDetalleID;
             VentaId = ventaId;
             VehiculoId = vehiculoId;
             SubTotal = subtotal;

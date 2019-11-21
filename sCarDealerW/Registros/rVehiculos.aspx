@@ -174,7 +174,6 @@
                     </div>
                 </div>
             </div>
-            <script type="text/javascript"> function VerificarCantidad(sender, args) { args.IsValid = (args.Value.length <= 11); }</script>
             <hr>
         </div>
     </div>
