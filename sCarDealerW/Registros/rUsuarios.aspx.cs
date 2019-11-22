@@ -63,7 +63,6 @@ namespace sCarDealerW.Registros
             u.Usuarioss = NombreUserTextBox.Text;
             u.Email = CorreoTextBox.Text;
             u.Clave = ContraseñaTextBox.Text;
-            u.TotalVentas = Convert.ToDecimal(TotalVendidoTextBox.Text);
 
             return u;
         }

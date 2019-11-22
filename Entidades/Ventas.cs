@@ -16,7 +16,7 @@ namespace Entidades
         public int UsuarioId { get; set; }
         public int VehiculoId { get; set; }
         public decimal Total { get; set; }
-        public decimal SubTotal { get; set; }
+        public decimal Precio { get; set; }
         public DateTime FechaVenta { get; set; }
         public DateTime FechaRegistro { get; set; }
 
@@ -29,16 +29,16 @@ namespace Entidades
             Total = 0;
             ClienteId = 0;
             UsuarioId = 0;
+            Precio = 0;
             VehiculoId = 0;
             FechaVenta = DateTime.Now;
             FechaRegistro = DateTime.Now;
-            SubTotal = 0;
            this.Detalle = new List<VentasDetalle>();
         }
 
-        public void AgregarDetalle(int ventaId, int vehiculoId, decimal subtotal, string descripcion)
+        public void AgregarDetalle(int ventaId, int vehiculoId, decimal precio, string descripcion)
         {
-            this.Detalle.Add(new VentasDetalle(ventaId, vehiculoId, subtotal,descripcion));
+            this.Detalle.Add(new VentasDetalle(ventaId, vehiculoId,precio,descripcion));
         }
         public void CalcularMonto()
         {
@@ -46,7 +46,7 @@ namespace Entidades
 
             foreach (var item in Detalle)
             {
-                total += item.SubTotal;
+                total += item.Precio;
             }
             Total = total;
         }

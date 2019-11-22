@@ -54,7 +54,7 @@ namespace BLL
                 {
                     if (!ventas.Detalle.Exists(A => A.VentasDetalleID == item.VentasDetalleID))
                     {
-                        ventas.Total += item.SubTotal;
+                        ventas.Total += item.Precio;
                         dbb.Entry(item).State = EntityState.Deleted;
 
                     }
@@ -64,7 +64,7 @@ namespace BLL
                 {
                     if (item.VentasDetalleID == 0)
                     {
-                       ventas.Total -= item.SubTotal;
+                       ventas.Total -= item.Precio;
                         db.Entry(item).State = EntityState.Added;
                     }
                     else
@@ -73,7 +73,7 @@ namespace BLL
                     }
 
                 }
-
+                Ventas v = new Ventas();
                 decimal modificado = ventas.Total - anterior.Total;
                 var Usuario = repositorioBase.Buscar(ventas.UsuarioId);
                 Usuario.TotalVentas += modificado;

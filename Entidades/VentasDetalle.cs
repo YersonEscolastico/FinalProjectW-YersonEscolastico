@@ -14,9 +14,7 @@ namespace Entidades
         public int VentaId { get; set; }
         public int VehiculoId { get; set; }
         public string Descripcion { get; set; }
-        public decimal SubTotal { get; set; }
-
-        public virtual Vehiculos Vehiculos { get; set; }
+        public decimal Precio { get; set; }
 
         public VentasDetalle()
         {
@@ -24,14 +22,14 @@ namespace Entidades
             VentaId = 0;
             VehiculoId = 0;
             Descripcion = "";
-            SubTotal = 0;
+            Precio = 0;
         }
 
-        public VentasDetalle(int ventaId, int vehiculoId, decimal subtotal, string descripcion)
+        public VentasDetalle(int ventaId, int vehiculoId, decimal precio, string descripcion)
         {
             VentaId = ventaId;
             VehiculoId = vehiculoId;
-            SubTotal = subtotal;
+            Precio = precio;
             Descripcion = descripcion;
         }
     }

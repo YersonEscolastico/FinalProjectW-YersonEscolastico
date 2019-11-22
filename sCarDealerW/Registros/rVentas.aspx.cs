@@ -13,18 +13,16 @@ namespace sCarDealerW.Registros
 {
     public partial class rVentas : System.Web.UI.Page
     {
-        Ventas v = new Ventas();
-
-        List<VentasDetalle> ListaDetalle = new List<VentasDetalle>();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                LimpiarCampos();
+         
                 FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 LlenarDropDownList();
 
                 ViewState["Ventas"] = new Ventas();
+                LimpiarCampos();
             }
         }
         protected void BindGrid()
@@ -51,7 +49,7 @@ namespace sCarDealerW.Registros
             ViewState["Ventas"] = new Ventas();
             VentasGridView.DataSource = null;
             this.BindGrid();
- 
+            PrecioDropDown_SelectedIndexChanged(null, null);
         }
 
 
@@ -205,7 +203,7 @@ namespace sCarDealerW.Registros
 
             foreach (var item in venta.Detalle)
             {
-                total += item.SubTotal;
+                total += item.Precio;
             }
             TotalTextBox.Text = total.ToString();
             CalTotal();
@@ -225,7 +223,7 @@ namespace sCarDealerW.Registros
 
             foreach (var item in detalle)
             {
-                Total += item.SubTotal;
+                Total += item.Precio;
             }
             TotalTextBox.Text = Total.ToString();
         }
@@ -238,7 +236,7 @@ namespace sCarDealerW.Registros
             List<VentasDetalle> lista = (List<VentasDetalle>)ViewState["VentasDetalle"];
             foreach (var item in lista)
             {
-                total2 = item.SubTotal;
+                total2 = item.Precio;
             }
             total = total - total2;
 
@@ -249,9 +247,13 @@ namespace sCarDealerW.Registros
         {
             int id;
             RepositorioBase<Vehiculos> db = new RepositorioBase<Vehiculos>();
-            Vehiculos s = new Vehiculos();
+            Vehiculos s = new Vehiculos(); Vehiculos a = new Vehiculos();
             int.TryParse(VehiculoDropDownList.SelectedValue, out id);
             s = db.Buscar(id);
+            if (VehiculoDropDownList.Text=="")
+            {
+                PrecioTextBox.Text = "0";
+            }else
             PrecioTextBox.Text = Convert.ToString(s.Precio);
         }
 
@@ -278,7 +280,7 @@ namespace sCarDealerW.Registros
 
                 foreach (var item in entrada.Detalle)
                 {
-                    total -= item.SubTotal;
+                    total -= item.Precio;
                 }
                 TotalTextBox.Text = total.ToString();
                 CalTotal();
