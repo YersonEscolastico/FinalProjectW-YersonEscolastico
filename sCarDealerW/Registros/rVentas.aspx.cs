@@ -86,6 +86,7 @@ namespace sCarDealerW.Registros
             ventas.UsuarioId = Utils.ToInt(UsuarioDropDownList.Text);
             ventas.VehiculoId = Utils.ToInt(VehiculoDropDownList.Text);
             ventas.Total = Convert.ToDecimal(TotalTextBox.Text);
+            ventas.Precio = Convert.ToDecimal(PrecioTextBox.Text);
             return ventas;
     }
 

@@ -98,6 +98,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Consultas\cCLientes.aspx" />
+    <Content Include="Consultas\cUsuarios.aspx" />
+    <Content Include="Consultas\cVehiculos.aspx" />
+    <Content Include="Consultas\cVentas.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -187,6 +191,34 @@
     <Content Include="SiteMaster.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\cCLientes.aspx.cs">
+      <DependentUpon>cCLientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cCLientes.aspx.designer.cs">
+      <DependentUpon>cCLientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cUsuarios.aspx.cs">
+      <DependentUpon>cUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cUsuarios.aspx.designer.cs">
+      <DependentUpon>cUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cVehiculos.aspx.cs">
+      <DependentUpon>cVehiculos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cVehiculos.aspx.designer.cs">
+      <DependentUpon>cVehiculos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cVentas.aspx.cs">
+      <DependentUpon>cVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\cVentas.aspx.designer.cs">
+      <DependentUpon>cVentas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -248,7 +280,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Consultas\" />
     <Folder Include="Models\" />
     <Folder Include="Reportes\" />
   </ItemGroup>
