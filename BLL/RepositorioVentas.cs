@@ -36,6 +36,9 @@ namespace BLL
             {
                 throw;
             }
+
+            finally
+            { db.Dispose(); }
             return paso;
         }
 
@@ -87,7 +90,11 @@ namespace BLL
             {
                 throw;
             }
-            db.Dispose();
+            finally
+            { db.Dispose();
+                dbb.Dispose();
+
+            }
             return paso;
 
         }
@@ -107,6 +114,10 @@ namespace BLL
             catch (Exception)
             {
                 throw;
+            }
+            finally
+            {
+                db.Dispose();
             }
             return entity;
         }

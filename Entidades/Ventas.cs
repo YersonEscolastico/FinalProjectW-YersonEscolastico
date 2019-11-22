@@ -36,9 +36,9 @@ namespace Entidades
            this.Detalle = new List<VentasDetalle>();
         }
 
-        public void AgregarDetalle(int ventaId, int vehiculoId, decimal precio, string descripcion)
+        public void AgregarDetalle(int ventaId, int vehiculoId, decimal precio, string descripcion,string vin,int clienteid)
         {
-            this.Detalle.Add(new VentasDetalle(ventaId, vehiculoId,precio,descripcion));
+            this.Detalle.Add(new VentasDetalle(ventaId, vehiculoId,precio,descripcion,vin,clienteid));
         }
         public void CalcularMonto()
         {

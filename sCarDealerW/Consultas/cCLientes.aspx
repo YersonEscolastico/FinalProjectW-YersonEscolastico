@@ -75,8 +75,8 @@
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
                                         <asp:HyperLinkField ControlStyle-ForeColor="blue"
-                                            DataNavigateUrlFields="UsuarioID"
-                                            DataNavigateUrlFormatString="~/UI/Registros/RegistroUsuario.aspx?Id={0}"
+                                            DataNavigateUrlFields="ClienteID"
+                                            DataNavigateUrlFormatString= "~/Registros/rClientes.aspx?Id={0}"
                                             Text="Editar"></asp:HyperLinkField>
                                     </Columns>
                                     <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

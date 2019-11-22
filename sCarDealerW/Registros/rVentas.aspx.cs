@@ -45,7 +45,6 @@ namespace sCarDealerW.Registros
             PrecioTextBox.Text = "0";
             TotalTextBox.Text = 0.ToString();
             FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            FechaRegistroTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             ViewState["Ventas"] = new Ventas();
             VentasGridView.DataSource = null;
             this.BindGrid();
@@ -58,9 +57,8 @@ namespace sCarDealerW.Registros
 
             int id;
             RepositorioBase<Vehiculos> db = new RepositorioBase<Vehiculos>();
-            Vehiculos s = new Vehiculos();
             int.TryParse(VehiculoDropDownList.SelectedValue, out id);
-            s = db.Buscar(id);
+            Vehiculos s = db.Buscar(id);
             decimal precio = s.Precio;
 
             if (precio < 0)
@@ -179,24 +177,22 @@ namespace sCarDealerW.Registros
 
         protected void ButtonAgregar_Click(object sender, EventArgs e)
         {
-            List<VentasDetalle> detalle = new List<VentasDetalle>();
             Ventas venta = new Ventas();
             decimal total = 0;
             RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
-            Vehiculos vehiculos = new Vehiculos();
 
-            int id = ToInt(VehiculoDropDownList.SelectedValue);
-            vehiculos = repositorio.Buscar(id);
+
+            int id = Utils.ToInt(VehiculoDropDownList.SelectedValue);
+            Vehiculos vehiculos = repositorio.Buscar(id);
 
             venta = (Ventas)ViewState["Ventas"];
 
-            DateTime date = DateTime.Now.Date;
             decimal precio = Convert.ToDecimal(PrecioTextBox.Text);
             int VehiculoId = Utils.ToInt(VehiculoDropDownList.SelectedValue);
             var subtotal = vehiculos.Precio = Convert.ToDecimal(PrecioTextBox.Text);
             string descripcion = VehiculoDropDownList.SelectedItem.ToString();
 
-            venta.Detalle.Add(new VentasDetalle(Convert.ToInt32(VentaIdTextBox.Text), VehiculoId, subtotal, descripcion));
+            venta.Detalle.Add(new VentasDetalle(Convert.ToInt32(VentaIdTextBox.Text), VehiculoId, subtotal, descripcion,vehiculos.Vin,venta.ClienteId));
 
             ViewState["Ventas"] = venta;
             this.BindGrid();
@@ -229,26 +225,11 @@ namespace sCarDealerW.Registros
             TotalTextBox.Text = Total.ToString();
         }
 
-
-        private void VaciaValores()
-        {
-            decimal total = Utils.ToDecimal(TotalTextBox.Text);
-            decimal total2 = 0;
-            List<VentasDetalle> lista = (List<VentasDetalle>)ViewState["VentasDetalle"];
-            foreach (var item in lista)
-            {
-                total2 = item.Precio;
-            }
-            total = total - total2;
-
-            TotalTextBox.Text = total.ToString();
-        }
-
         protected void PrecioDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id;
             RepositorioBase<Vehiculos> db = new RepositorioBase<Vehiculos>();
-            Vehiculos s = new Vehiculos(); Vehiculos a = new Vehiculos();
+            Vehiculos s = new Vehiculos(); 
             int.TryParse(VehiculoDropDownList.SelectedValue, out id);
             s = db.Buscar(id);
             if (VehiculoDropDownList.Text=="")
@@ -271,8 +252,8 @@ namespace sCarDealerW.Registros
             decimal total = Utils.ToDecimal(TotalTextBox.Text);
             if (VentasGridView.Rows.Count > 0 && VentasGridView.SelectedIndex >= 0)
             {
-                Ventas entrada = new Ventas();
-                entrada = (Ventas)ViewState["Ventas"];
+      
+                Ventas entrada = (Ventas)ViewState["Ventas"];
 
                 GridViewRow row = (sender as Button).NamingContainer as GridViewRow;
                 entrada.RemoverDetalle(row.RowIndex);
@@ -290,6 +271,20 @@ namespace sCarDealerW.Registros
 
         }
 
+
+        private void VaciaValores()
+        {
+            decimal total = Utils.ToDecimal(TotalTextBox.Text);
+            decimal total2 = 0;
+            List<VentasDetalle> lista = (List<VentasDetalle>)ViewState["VentasDetalle"];
+            foreach (var item in lista)
+            {
+                total2 = item.Precio;
+            }
+            total = total - total2;
+
+            TotalTextBox.Text = total.ToString();
+        }
 
         protected void VentasGridVie_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -332,15 +327,5 @@ namespace sCarDealerW.Registros
 
             ViewState["Ventas"] = new Ventas();
         }
-
-        public static int ToInt(string valor)
-        {
-            int retorno = 0;
-            int.TryParse(valor, out retorno);
-
-            return retorno;
-        }
-
-
     }
 }

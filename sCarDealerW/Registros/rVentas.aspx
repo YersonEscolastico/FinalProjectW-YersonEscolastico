@@ -11,27 +11,27 @@
 
             <%--VentaId--%>
             <div class="form-group row">
-                <label class="control-label col-sm-1" for="VentaIdTextBox">Venta ID:</label>
-                <div class="col-sm-1 col-md-2 col-xs4">
+                <label class="control-label col-md-1" for="VentaIdTextBox">Venta ID:</label>
+                <div class=" col-md-2 ">
                     <asp:TextBox type="Number" class="form-control" ID="VentaIdTextBox" placeholder="0" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="VentaIdTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="VentaIdTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="VentaIdTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="VentaIdTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                 </div>
 
                 <%--Buscar Button--%>
-                <div class="col-sm-1 col-md-2 col-xs2">
+                <div class=" col-md-2">
                     <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-sm" ValidationGroup="Buscar" OnClick="BuscarButton_Click" />
                 </div>
 
                 <%--Fecha--%>
-                <label class="col-sm-1 col-md-1 col-xs1" for="FechaTextBox">Fecha:</label>
-                <div class="col-sm-1 col-md-2">
+                <label class="col-md-1" for="FechaTextBox">Fecha:</label>
+                <div class="col-md-2">
                     <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" />
                 </div>
 
                 <%--Uauarios--%>
-                <label class="control-label col-sm-1" for="UsuarioTextBox">Usuario:</label>
-                <div class="col-sm-1 col-md-2 col-xs2">
+                <label class="control-label col-md-1" for="UsuarioTextBox">Usuario:</label>
+                <div class=" col-md-2">
                     <asp:DropDownList class="form-control" ID="UsuarioDropDownList" disabled="disabled" Increment="0" runat="server"></asp:DropDownList>
 
                 </div>
@@ -41,15 +41,15 @@
 
             <%--Cliente--%>
             <div class="form-group row">
-                <label class="control-label col-sm-2" for="ClienteTextBox">Cliente:</label>
-                <div class="col-sm-1 col-md-3 col-xs4">
+                <label class="control-label col-md-2" for="ClienteTextBox">Cliente:</label>
+                <div class=" col-md-3">
                     <asp:DropDownList class="form-control" ID="ClienteDropDownList" runat="server"></asp:DropDownList>
                 </div>
 
 
                 <%--Fecha Fecha Registro--%>
-                <label class="control-label col-sm-2" for="FechaRegistroTextBox">Fecha Registro:</label>
-                <div class="col-sm-1 col-md-3">
+                <label class="control-label col-md-2" for="FechaRegistroTextBox">Fecha Registro:</label>
+                <div class="col-md-3">
                     <asp:TextBox ID="FechaRegistroTextBox" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="False" />
                 </div>
             </div>
@@ -59,20 +59,20 @@
                 <div class="panel-body">
                     <%--Vehiculo--%>
                     <div class="form-group row">
-                        <label class="control-label col-sm-2" for="VehiculoTextBox">Vehiculo:</label>
-                        <div class="col-sm-1 col-md-3 col-xs4">
+                        <label class="control-label col-md-2" for="VehiculoTextBox">Vehiculo:</label>
+                        <div class=" col-md-3">
                             <asp:DropDownList class="form-control" ID="VehiculoDropDownList" AutoPostBack="true" runat="server" OnSelectedIndexChanged="PrecioDropDown_SelectedIndexChanged"></asp:DropDownList>
                         </div>
 
                         <%--Precio--%>
-                        <label class="control-label col-sm-1" for="PrecioTextBox">Precio:</label>
-                        <div class="col-sm-1 col-md-4">
+                        <label class="control-label col-md-1" for="PrecioTextBox">Precio:</label>
+                        <div class="col-md-4">
                             <asp:TextBox type="Number" class="form-control" ID="PrecioTextBox" Text="0" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="PrecioTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="PrecioTextBox" ValidationExpression="^[0-9.00]*$"></asp:RegularExpressionValidator>
                         </div>
                         <%--Agregar--%>
-                        <div class="col-xs-2 col-lg-0 p-4">
+                        <div class="col-md-2">
                             <asp:Button ID="ButtonAgregar" runat="server" Text="Agregar" class="btn btn-success" OnClick="ButtonAgregar_Click" />
                         </div>
                     </div>
@@ -81,35 +81,44 @@
                     <%--Grid--%>
                     <div class="table-responsive">
                         <div class="center">
-                            <asp:GridView ID="VentasGridView"
-                                runat="server"
-                                class="table table-condensed table-bordered table-responsive"
-                                CellPadding="4" ForeColor="#333333" GridLines="None">
+                            <asp:GridView ID="VentasGridView" runat="server" class="table table-condensed table-bordered table-responsive"  CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="true" ShowHeaderWhenEmpty="true" AutoGenerateColumns="false">
 
                                 <AlternatingRowStyle BackColor="White" />
                                 <Columns>
-                                    <asp:TemplateField ShowHeader="False" HeaderText="Remover">
+                                    <asp:TemplateField ShowHeader="true" HeaderText="Remover">
                                         <ItemTemplate>
                                             <asp:Button ID="RemoveLinkButton" runat="server" CausesValidation="false" CommandName="Select"
-                                                Text="Remover " class="btn btn-success btn-sm" OnClick="RemoveLinkButton_Click" />
+                                                Text="Remover " class="btn btn-danger btn-sm" OnClick="RemoveLinkButton_Click" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
+
+                                
+                                <Columns>
+                                    <asp:BoundField DataField="ClienteId" HeaderText="ClienteId" />
+                                    <asp:BoundField DataField="VehiculoId" HeaderText="VehiculoId" />                       
+                                    <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
+                                    <asp:BoundField DataField="Vin" HeaderText="Vin" />
+                                    <asp:BoundField DataField="Precio" HeaderText="Precio" />
+
+                                </Columns>
+
                                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                 <RowStyle BackColor="#EFF3FB" />
                             </asp:GridView>
                         </div>
                     </div>
-                        <div class="form-group">
-                        <label for="Total:" class="col-md-3 control-label input-sm">Total: </label>
-                        <div class="col-md-4">
+                                     <%--Total--%>
+                    <div class="form-group">
+                        <label for="Total:" class="col-md-9 control-label input-sm">Total: </label>
+                        <div class="col-md-3">
                             <asp:TextBox class="form-control input-sm" ReadOnly="True" ID="TotalTextBox" Text="0" runat="server"></asp:TextBox>
                         </div>
                     </div>
-            </div>
+                </div>
 
             </div>
-                
+
 
             <hr>
             <div class="panel">
