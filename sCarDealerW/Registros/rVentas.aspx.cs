@@ -115,12 +115,11 @@ namespace sCarDealerW.Registros
             Ventas ventas;
             bool paso = false;
 
-            ventas = LlenaClase();
 
             if (!Validar())
-            {
                 return;
-            }
+
+            ventas = LlenaClase();
 
             if (VentaIdTextBox.Text == 0.ToString())
             {
