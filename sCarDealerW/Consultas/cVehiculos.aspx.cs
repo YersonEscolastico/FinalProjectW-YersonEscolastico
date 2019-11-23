@@ -62,5 +62,10 @@ namespace sCarDealerW.Consultas
             DatosGridView.DataSource = lista;
             DatosGridView.DataBind();
         }
+
+        protected void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(@"~\Reportes\VehiculosReport.aspx");
+        }
     }
 }

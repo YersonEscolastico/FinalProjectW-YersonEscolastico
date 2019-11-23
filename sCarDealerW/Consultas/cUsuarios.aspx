@@ -23,14 +23,14 @@
                     <%--Desde--%>
                 <div class="form-group row">
                     <label class="control-label col-md-2" for="DesdeTextBox">Desde:</label>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <asp:TextBox ID="DesdeTextBox" CssClass="form-control input-group" TextMode="Date" runat="server" />
                     </div>
 
 
                     <%--Hasta--%>
                     <label class="control-label col-md-1" for="HastaTextBox">Hasta:</label>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <asp:TextBox ID="HastaTextBox" CssClass="form-control input-group" TextMode="Date" runat="server" />
                     </div>
                 </div>
@@ -57,7 +57,7 @@
 
                         <%--Buscar--%>
                         <div class="col-md-4">
-                            <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-success input-sm" Text="Buscar" OnClick="BuscarButton_Click" />
+                            <asp:Button ID="BuscarButton" runat="server" CssClass="btn btn-success input-sm" Text="Buscar" OnClick="BuscarButton_Click"/>
                         </div>
                     </div>
 
@@ -91,7 +91,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-4">
-                        <asp:Button ID="Button" runat="server" Class=" col-md-4 btn btn-danger input-sm" Text="Imprimir" />
+                        <asp:Button ID="Button" runat="server" Class=" col-md-4 btn btn-danger input-sm" Text="Imprimir" OnClick="ImprimirButton_Click"/>
                     </div>
                 </div>
             </div>

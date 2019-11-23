@@ -131,7 +131,9 @@
     <Content Include="Registros\rUsuarios.aspx" />
     <Content Include="Registros\rVehiculos.aspx" />
     <Content Include="Registros\rVentas.aspx" />
+    <Content Include="Reportes\ClientesReport.aspx" />
     <Content Include="Reportes\UsuariosReport.aspx" />
+    <Content Include="Reportes\VehiculosReport.aspx" />
     <Content Include="Resources\hh.ico" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -157,16 +159,16 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
-    <Content Include="sCarDBDataSet.xsc">
-      <DependentUpon>sCarDBDataSet.xsd</DependentUpon>
+    <Content Include="ClientesDataSet.xsc">
+      <DependentUpon>ClientesDataSet.xsd</DependentUpon>
     </Content>
-    <None Include="sCarDBDataSet.xsd">
+    <None Include="ClientesDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sCarDBDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>ClientesDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <Content Include="sCarDBDataSet.xss">
-      <DependentUpon>sCarDBDataSet.xsd</DependentUpon>
+    <Content Include="ClientesDataSet.xss">
+      <DependentUpon>ClientesDataSet.xsd</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
@@ -232,6 +234,11 @@
     <Content Include="SiteMaster.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\cCLientes.aspx.cs">
       <DependentUpon>cCLientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -299,6 +306,13 @@
     <Compile Include="Registros\rVentas.aspx.designer.cs">
       <DependentUpon>rVentas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ClientesReport.aspx.cs">
+      <DependentUpon>ClientesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ClientesReport.aspx.designer.cs">
+      <DependentUpon>ClientesReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\UsuariosReport.aspx.cs">
       <DependentUpon>UsuariosReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -306,10 +320,12 @@
     <Compile Include="Reportes\UsuariosReport.aspx.designer.cs">
       <DependentUpon>UsuariosReport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sCarDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sCarDBDataSet.xsd</DependentUpon>
+    <Compile Include="Reportes\VehiculosReport.aspx.cs">
+      <DependentUpon>VehiculosReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\VehiculosReport.aspx.designer.cs">
+      <DependentUpon>VehiculosReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="SiteMaster.Master.cs">
       <DependentUpon>SiteMaster.Master</DependentUpon>
@@ -319,12 +335,44 @@
       <DependentUpon>SiteMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UsuariosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuariosDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Utilitarios\Utils.cs" />
+    <Compile Include="VehiculosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VehiculosDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
+    <Content Include="UsuariosDataSet.xsc">
+      <DependentUpon>UsuariosDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="UsuariosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsuariosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="UsuariosDataSet.xss">
+      <DependentUpon>UsuariosDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="VehiculosDataSet.xsc">
+      <DependentUpon>VehiculosDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="VehiculosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VehiculosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="VehiculosDataSet.xss">
+      <DependentUpon>VehiculosDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -353,7 +401,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\cReport.rdlc" />
     <EmbeddedResource Include="Reportes\uReport.rdlc" />
+    <EmbeddedResource Include="Reportes\vReport.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

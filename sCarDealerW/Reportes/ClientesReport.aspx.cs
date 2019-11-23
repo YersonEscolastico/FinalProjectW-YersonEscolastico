@@ -10,22 +10,23 @@ using System.Web.UI.WebControls;
 
 namespace sCarDealerW.Reportes
 {
-    public partial class UsuariosReport : System.Web.UI.Page
+    public partial class ClientesReport : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!Page.IsPostBack)
             {
-                RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+                RepositorioBase<Clientes> repositorio = new RepositorioBase<Clientes>();
                 var lista = repositorio.GetList(x => true);
 
                 MyReportViewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
                 MyReportViewer.Reset();
 
 
-                MyReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Reportes\uReport.rdlc");
+                MyReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Reportes\cReport.rdlc");
 
-                MyReportViewer.LocalReport.DataSources.Add(new ReportDataSource("Usuarios", lista));
+                MyReportViewer.LocalReport.DataSources.Add(new ReportDataSource("Clientes", lista));
 
                 MyReportViewer.LocalReport.Refresh();
             }
