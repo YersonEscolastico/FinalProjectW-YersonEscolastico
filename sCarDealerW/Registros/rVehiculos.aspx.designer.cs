@@ -69,13 +69,22 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.DropDownList MarcaDropDownList;
 
         /// <summary>
-        /// RequiredFieldValidator2 control.
+        /// MarcaRequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator MarcaRequiredFieldValidator1;
+
+        /// <summary>
+        /// MarcaRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator MarcaRequiredFieldValidator;
 
         /// <summary>
         /// DescripcionTextBox control.
@@ -114,13 +123,22 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.DropDownList ColorDropDownList;
 
         /// <summary>
-        /// RequiredFieldValidator6 control.
+        /// ColorRequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ColorRequiredFieldValidator2;
+
+        /// <summary>
+        /// ColorRegularExpressionValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ColorRegularExpressionValidator5;
 
         /// <summary>
         /// VinTextBox control.
@@ -132,22 +150,22 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.TextBox VinTextBox;
 
         /// <summary>
-        /// NombreRequiredFieldValidator control.
+        /// VinRequiredFieldValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator NombreRequiredFieldValidator;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator VinRequiredFieldValidator;
 
         /// <summary>
-        /// NombreRegularExpressionValidator control.
+        /// VinRegularExpressionValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator NombreRegularExpressionValidator;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator VinRegularExpressionValidator;
 
         /// <summary>
         /// ModeloDropDownList control.
@@ -159,13 +177,22 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.DropDownList ModeloDropDownList;
 
         /// <summary>
-        /// RequiredFieldValidator3 control.
+        /// ModeloRequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ModeloRequiredFieldValidator2;
+
+        /// <summary>
+        /// ModeloRegularExpressionValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ModeloRegularExpressionValidator5;
 
         /// <summary>
         /// AnioTextBox control.
@@ -240,13 +267,22 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.DropDownList EstadoDropDownList;
 
         /// <summary>
-        /// RequiredFieldValidator7 control.
+        /// EstadoRequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator EstadoRequiredFieldValidator2;
+
+        /// <summary>
+        /// EstadoRegularExpressionValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator EstadoRegularExpressionValidator5;
 
         /// <summary>
         /// CostoTextBox control.
@@ -267,15 +303,6 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
 
         /// <summary>
-        /// RegularExpressionValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
-
-        /// <summary>
         /// PrecioTextBox control.
         /// </summary>
         /// <remarks>
@@ -285,22 +312,13 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.TextBox PrecioTextBox;
 
         /// <summary>
-        /// RequiredFieldValidator4 control.
+        /// RequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
-
-        /// <summary>
-        /// RegularExpressionValidator3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
         /// FechaRegistroTextBox control.
@@ -310,6 +328,15 @@ namespace sCarDealerW.Registros
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox FechaRegistroTextBox;
+
+        /// <summary>
+        /// FechaRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator FechaRequiredFieldValidator;
 
         /// <summary>
         /// NuevoButton control.

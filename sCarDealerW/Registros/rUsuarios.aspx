@@ -39,8 +39,8 @@
                         <label class="control-label col-md-2" for="NombreTextBox">Nombres:</label>
                         <div class="col-md-2">
                             <asp:TextBox type="text" class="form-control" ID="NombreTextBox" placeholder="Ingrese Nombres" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="NombreRequiredFieldValidator" runat="server" ErrorMessage="Ingrese algun nombre!" ValidationGroup="guardar" ControlToValidate="NombreTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="NombreRegularExpressionValidator" runat="server" ErrorMessage="Ingrese algun nombre!" ControlToValidate="NombreTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
+                            <asp:RequiredFieldValidator ID="NombreRequiredFieldValidator" runat="server" ErrorMessage="Ingrese algun nombre!" ValidationGroup="guardar" ControlToValidate="NombreTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Nombre obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="NombreRegularExpressionValidator" runat="server" ErrorMessage="Ingrese un nombre correcto!" ControlToValidate="NombreTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
                         </div>
 
                         <%--Correo--%>
@@ -53,14 +53,15 @@
                     </div>
                     <%--Nivel Acceso--%>
                     <div class="form-group row">
-                        <label class="control-label col-md-2" for="NombreUserTextBox">Nivel Acceso:</label>
+                        <label class="control-label col-md-2" for="NivelAccesoTextBox">Nivel Acceso:</label>
                         <div class=" col-md-3">
-                            <asp:DropDownList ID="SexoDropDownList" runat="server" Class="form-control">
+                            <asp:DropDownList ID="NivelAccesoTextBox" runat="server" Class="form-control">
                                 <asp:ListItem Selected="True" Value="">Seleccione Uno</asp:ListItem>
                                 <asp:ListItem Text="Administrador"></asp:ListItem>
                                 <asp:ListItem Text="Usuario"></asp:ListItem>
                             </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Sexo: Seleccione" ValidationGroup="Guardar" ControlToValidate="SexoDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
+                          <asp:RequiredFieldValidator ID="NivelRequiredFieldValidator1" runat="server" ErrorMessage="Elija una opcion!" ValidationGroup="guardar" ControlToValidate="NivelAccesoTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Debe elegir una opcion">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="NivelRequiredFieldValidator"  runat="server" ErrorMessage="Ingrese un usuario correcto!" ControlToValidate="NivelAccesoTextBox"  SetFocusOnError="True"></asp:RegularExpressionValidator>
 
                         </div>
                         <%--Usuario--%>
@@ -68,7 +69,7 @@
                         <div class="col-md-4">
                             <asp:TextBox type="text" class="form-control" ID="NombreUserTextBox" placeholder="Ingrese Nombre De Usuario" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="NombreUserTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Ingrese algun Telefono!" ValidationGroup="guardar" ControlToValidate="NombreUserTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre usuario">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="NombreUserTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese algun Telefono!" ControlToValidate="NombreUserTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
+                            <asp:RegularExpressionValidator ID="NombreUserTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese un usuario correcto!" ControlToValidate="NombreUserTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
                         </div>
                                             </div>
                         <%--Contrasena--%>
@@ -93,6 +94,8 @@
                             <label class="control-label col-md-2" for="FechaRegistroTextBox">Fecha Registro:</label>
                             <div class=" col-md-3">
                                 <asp:TextBox ID="FechaRegistroTextBox" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="False" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Ingrese Fecha!" ValidationGroup="guardar" ControlToValidate="FechaRegistroTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Fecha obligatorio&quot;&gt;Por favor llenar el campo fecha">*</asp:RequiredFieldValidator>
+
                             </div>
 
 

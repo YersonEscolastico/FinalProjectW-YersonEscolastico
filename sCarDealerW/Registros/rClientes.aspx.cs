@@ -73,7 +73,7 @@ namespace sCarDealerW.Registros
             return u;
         }
 
-        protected bool ValidarNombres(Clientes clientes)
+        protected bool Validar(Clientes clientes)
         {
             bool validar = false;
             Expression<Func<Clientes, bool>> filtro = p => true;
@@ -161,7 +161,7 @@ namespace sCarDealerW.Registros
                 return;
             }
             u = LlenaClase();
-            if (ValidarNombres(u))
+            if (Validar(u))
             {
                 return;
             }
@@ -185,7 +185,7 @@ namespace sCarDealerW.Registros
                             Utils.ShowToastr(this, "Modificado Exitosamente!!", "Exito", "success");
                         }
                         else
-                            Utils.ShowToastr(this, "No Encontrado!!", "Error", "error");
+                            Utils.ShowToastr(this, "No se pudo Modificar!!", "Error", "error");
                     }
 
                     if (paso)
@@ -234,27 +234,11 @@ namespace sCarDealerW.Registros
                 else
                 {
                     paso = true;
-                    Utils.ShowToastr(this, "Solo Letras en Nombre y NombreUsuario!", "Error", "error");
+                    Utils.ShowToastr(this, "Solo Letras en Nombre!", "Error", "error");
                 }
-                Utils.ShowToastr(this, "Solo Letras en Nombre y NombreUsuario!", "Error", "error");
+                Utils.ShowToastr(this, "Solo Letras en Nombre!", "Error", "error");
                 paso = true;
             }
-
-            if (!resultado)
-            {
-                if (resultado)
-                {
-                    paso = false;
-                }
-                else
-                {
-                    paso = true;
-                    Utils.ShowToastr(this, "Solo Letras en Nombres", "Error", "error");
-                }
-                Utils.ShowToastr(this, "Solo Letras en Nombres!", "Error", "error");
-                paso = true;
-            }
-
             return paso;
         }
     }

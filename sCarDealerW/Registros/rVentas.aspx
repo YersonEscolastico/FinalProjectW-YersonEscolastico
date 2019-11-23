@@ -85,7 +85,7 @@
 
                                 <AlternatingRowStyle BackColor="White" />
                                 <Columns>
-                                    <asp:TemplateField ShowHeader="true" HeaderText="Remover">
+                                    <asp:TemplateField>
                                         <ItemTemplate>
                                             <asp:Button ID="RemoveLinkButton" runat="server" CausesValidation="false" CommandName="Select"
                                                 Text="Remover " class="btn btn-danger btn-sm" OnClick="RemoveLinkButton_Click" />

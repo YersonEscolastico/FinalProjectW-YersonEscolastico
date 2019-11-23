@@ -94,13 +94,33 @@ namespace sCarDealerW.Registros
             return (ventas != null);
 
     }
+        private bool Validar()
+        {
+            bool estato = false;
 
-    protected void BtnGuardar_Click(object sender, EventArgs e)
+            if (VentasGridView.Rows.Count == 0)
+            {
+                Utils.ShowToastr(this, "Debe agregar detalle.", "Error", "error");
+                estato = true;
+            }
+            if (String.IsNullOrWhiteSpace(VentaIdTextBox.Text))
+            {
+                Utils.ShowToastr(this, "Debe tener un Id para guardar", "Error", "error");
+                estato = true;
+            }
+            return estato;
+        }
+        protected void BtnGuardar_Click(object sender, EventArgs e)
     {
             Ventas ventas;
             bool paso = false;
 
             ventas = LlenaClase();
+
+            if (!Validar())
+            {
+                return;
+            }
 
             if (VentaIdTextBox.Text == 0.ToString())
             {

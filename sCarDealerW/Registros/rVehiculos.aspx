@@ -18,6 +18,7 @@
                     <asp:RegularExpressionValidator ID="VehiculoIdTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="VehiculoIdTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                 </div>
 
+
                 <%--Buscar Button--%>
                 <div class=" col-md-2">
                     <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-sm" ValidationGroup="Buscar" OnClick="BtnBuscar_Click" />
@@ -36,7 +37,7 @@
                 <div class="panel-body">
                     <%--Marca--%>
                     <div class="form-group row">
-                        <label class="control-label col-md-2" for="MarcaUserTextBox">Marca:</label>
+                        <label class="control-label col-md-2" for="MarcaTextBox">Marca:</label>
                         <div class="col-md-4">
                             <asp:DropDownList ID="MarcaDropDownList" runat="server" Class="form-control">
                                 <asp:ListItem Selected="True" Value="">Seleccione Uno</asp:ListItem>
@@ -53,17 +54,21 @@
                                 <asp:ListItem Text="Lamborghini"></asp:ListItem>
 
                             </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Marca: Seleccione" ValidationGroup="Guardar" ControlToValidate="MarcaDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
-                        </div>
+                                 <asp:RequiredFieldValidator ID="MarcaRequiredFieldValidator1" runat="server" ErrorMessage="Elija una opcion!" ValidationGroup="guardar" ControlToValidate="MarcaDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Debe elegir una opcion">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="MarcaRequiredFieldValidator"  runat="server" ErrorMessage="Elija una opcion!" ControlToValidate="MarcaDropDownList" SetFocusOnError="True"></asp:RegularExpressionValidator>
+
+                             </div>
 
                         <%--Descripcion--%>
                         <label class="control-label col-md-1" for="DescripcionTextBox">Descripcion:</label>
                         <div class=" col-md-4">
-                            <asp:TextBox type="DescripcionTextBox" class="form-control" ID="DescripcionTextBox" placeholder="Ingrese Nombre Usuario" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Ingrese algun Telefono!" ValidationGroup="guardar" ControlToValidate="DescripcionTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre usuario">*</asp:RequiredFieldValidator>
+                            <asp:TextBox type="DescripcionTextBox" class="form-control" ID="DescripcionTextBox" placeholder="Ingrese Descripcion" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Ingrese algun Telefono!" ValidationGroup="guardar" ControlToValidate="DescripcionTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Descripcion">*</asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Ingrese algun Telefono!" ControlToValidate="DescripcionTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
                         </div>
                     </div>
+
+
 
                     <%--Color--%>
                     <div class="form-group row">
@@ -80,15 +85,17 @@
                                 <asp:ListItem Text="Dorado"></asp:ListItem>
                                 <asp:ListItem Text="Plateado"></asp:ListItem>
                             </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Sexo: Seleccione" ValidationGroup="Guardar" ControlToValidate="ColorDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
-                        </div>
+                            <asp:RequiredFieldValidator ID="ColorRequiredFieldValidator2" runat="server" ErrorMessage="Elija una opcion!" ValidationGroup="guardar" ControlToValidate="ColorDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Debe elegir una opcion">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="ColorRegularExpressionValidator5"  runat="server" ErrorMessage="Elija una opcion!" ControlToValidate="ColorDropDownList"  SetFocusOnError="True"></asp:RegularExpressionValidator>
+
+                            </div>
 
                         <%--Vin--%>
                         <label class="control-label col-md-1" for="VinTextBox">Vin:</label>
                         <div class="col-md-4">
-                            <asp:TextBox type="text" class="form-control" ID="VinTextBox" placeholder="Ingrese Nombres" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="NombreRequiredFieldValidator" runat="server" ErrorMessage="Ingrese algun nombre!" ValidationGroup="guardar" ControlToValidate="VinTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="NombreRegularExpressionValidator" runat="server" ErrorMessage="Ingrese algun nombre!" ControlToValidate="VinTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
+                            <asp:TextBox type="text" class="form-control" ID="VinTextBox" placeholder="Ingrese Vin" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="VinRequiredFieldValidator" runat="server" ErrorMessage="Ingrese Vin!" ValidationGroup="guardar" ControlToValidate="VinTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Vin obligatorio&quot;&gt;Por favor llenar el campo Vin">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="VinRegularExpressionValidator" runat="server" ErrorMessage="Ingrese Vin!" ControlToValidate="VinTextBox"  SetFocusOnError="True"></asp:RegularExpressionValidator>
                         </div>
 
                         <br />
@@ -103,27 +110,31 @@
                                 <asp:ListItem Text="Coupe"></asp:ListItem>
                                 <asp:ListItem Text="Todo Terreno"></asp:ListItem>
                             </asp:DropDownList>
+                         <asp:RequiredFieldValidator ID="ModeloRequiredFieldValidator2" runat="server" ErrorMessage="Elija una opcion!" ValidationGroup="guardar" ControlToValidate="ModeloDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Debe elegir una opcion">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="ModeloRegularExpressionValidator5"  runat="server" ErrorMessage="Elija una opcion!" ControlToValidate="ModeloDropDownList"  SetFocusOnError="True"></asp:RegularExpressionValidator>
 
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Sexo: Seleccione" ValidationGroup="Guardar" ControlToValidate="ModeloDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                         <br />
                         <%--Anio--%>
                         <label class="control-label col-md-1" for="AnioTextBox">Anio:</label>
                         <div class=" col-md-4">
-                            <asp:TextBox type="text" class="form-control" ID="AnioTextBox" placeholder="Ingrese Cedula" runat="server" MaxLength="11"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="CedulaRequiredFieldValidator" runat="server" ErrorMessage="Ingrese alguna cedula!" ValidationGroup="guardar" ControlToValidate="AnioTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="CedulaRegularExpressionValidator" runat="server" ErrorMessage="Ingrese alguna cedula!" ControlToValidate="AnioTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
-                            <asp:CustomValidator ID="AnioCustomValidator" runat="server" ControlToValidate="AnioTextBox" ErrorMessage="Introduzca Cedula Correcta" ValidationGroup="guardar" ClientValidationFunction="VerificarCantidad"></asp:CustomValidator>
+                            <asp:TextBox type="text" class="form-control" ID="AnioTextBox" placeholder="Ingrese año" runat="server" MaxLength="11"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="CedulaRequiredFieldValidator" runat="server" ErrorMessage="Ingrese Año!" ValidationGroup="guardar" ControlToValidate="AnioTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="CedulaRegularExpressionValidator" runat="server" ErrorMessage="Ingrese año!" ControlToValidate="AnioTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
+                            <asp:CustomValidator ID="AnioCustomValidator" runat="server" ControlToValidate="AnioTextBox" ErrorMessage="Introduzca año" ValidationGroup="guardar" ClientValidationFunction="VerificarCantidad"></asp:CustomValidator>
                         </div>
                         <br />
+
                         <%--Placa--%>
                         <label class="control-label col-md-2" for="PlacaTextBox">Placa:</label>
                         <div class=" col-md-4">
-                            <asp:TextBox type="PlacaTextBox" class="form-control" ID="PlacaTextBox" placeholder="Ingrese Nombres" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese algun nombre!" ValidationGroup="guardar" ControlToValidate="PlacaTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Ingrese algun nombre!" ControlToValidate="PlacaTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
+                            <asp:TextBox type="PlacaTextBox" class="form-control" ID="PlacaTextBox" placeholder="Ingrese Placa" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese Placa!" ValidationGroup="guardar" ControlToValidate="PlacaTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Ingrese Placa!" ControlToValidate="PlacaTextBox" SetFocusOnError="True"></asp:RegularExpressionValidator>
                         </div>
                         <br />
+
+
                         <%--Estado--%>
                         <label class="control-label col-md-1" for="EstadoTextBox">Estado:</label>
                         <div class=" col-md-4">
@@ -132,7 +143,9 @@
                                 <asp:ListItem Text="Disponible"></asp:ListItem>
                                 <asp:ListItem Text="Vendido"></asp:ListItem>
                             </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Estado: Seleccione" ValidationGroup="Guardar" ControlToValidate="EstadoDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
+                              <asp:RequiredFieldValidator ID="EstadoRequiredFieldValidator2" runat="server" ErrorMessage="Elija una opcion!" ValidationGroup="guardar" ControlToValidate="EstadoDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Debe elegir una opcion">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="EstadoRegularExpressionValidator5"  runat="server" ErrorMessage="Elija una opcion!" ControlToValidate="EstadoDropDownList"  SetFocusOnError="True"></asp:RegularExpressionValidator>
+
                         </div>
                     </div>
 
@@ -140,23 +153,24 @@
                     <label class="control-label col-md-2" for="CostoTextBox">Costo:</label>
                     <div class=" col-md-4">
                         <asp:TextBox type="Number" class="form-control" ID="CostoTextBox" Text="0" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="CostoTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="CostoTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
-                    </div>
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Ingrese Costo!" ValidationGroup="guardar" ControlToValidate="CostoTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Costo obligatorio&quot;&gt;Por favor llenar el campo Costo">*</asp:RequiredFieldValidator>
 
+                    </div>
                     <%--Precio--%>
                     <label class="control-label col-md-1" for="PrecioTextBox">Precio:</label>
                     <div class="col-md-4">
                         <asp:TextBox type="Number" class="form-control" ID="PrecioTextBox" Text="0" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="PrecioTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="PrecioTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
-                    </div>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ingrese Precio!" ValidationGroup="guardar" ControlToValidate="CostoTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Precio obligatorio&quot;&gt;Por favor llenar el campo Precio">*</asp:RequiredFieldValidator>
 
+                        </div>
+                    <br />    <br />    <br />
                     <%--Fecha Registro--%>
                     <label class="control-label col-md-2" for="FechaRegistroTextBox">Fecha Registro:</label>
                     <div class="col-md-4">
                         <asp:TextBox ID="FechaRegistroTextBox" class="form-control input-group" TextMode="Date" runat="server" Enabled="true" ReadOnly="False" />
-                    </div>
+                     <asp:RequiredFieldValidator ID="FechaRequiredFieldValidator" runat="server" ErrorMessage="Ingrese Fecha!" ValidationGroup="guardar" ControlToValidate="FechaRegistroTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Fecha obligatorio&quot;&gt;Por favor llenar el campo fecha">*</asp:RequiredFieldValidator>
+
+                        </div>
                     <label class="control-label col-sm-1" for="hh"></label>
                 </div>
 

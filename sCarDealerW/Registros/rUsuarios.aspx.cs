@@ -27,7 +27,7 @@ namespace sCarDealerW.Registros
 
         private void LimpiarCampos()
         {
-            UsuarioIdTextBox.Text = string.Empty;
+            UsuarioIdTextBox.Text = "0";
             FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             NombreTextBox.Text = string.Empty;
             NombreUserTextBox.Text = string.Empty;
@@ -47,6 +47,7 @@ namespace sCarDealerW.Registros
             CorreoTextBox.Text = usuarios.Email.ToString();
             ContraseñaTextBox.Text = usuarios.Clave.ToString();
             VContraseñaTextBox.Text = usuarios.Clave.ToString();
+            NivelAccesoTextBox.Text = usuarios.NivelAcceso.ToString();
             TotalVendidoTextBox.Text = usuarios.TotalVentas.ToString();
         }
 
@@ -63,40 +64,10 @@ namespace sCarDealerW.Registros
             u.Usuarioss = NombreUserTextBox.Text;
             u.Email = CorreoTextBox.Text;
             u.Clave = ContraseñaTextBox.Text;
-
+            u.NivelAcceso = NivelAccesoTextBox.Text;
             return u;
         }
 
-        protected bool ValidarNombres(Usuarios usuarios)
-        {
-            bool validar = false;
-            Expression<Func<Usuarios, bool>> filtro = p => true;
-            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
-            var lista = repositorio.GetList(c => true);
-            foreach (var item in lista)
-            {
-                if (usuarios.Usuarioss == item.Usuarioss)
-                {
-                    Utils.ShowToastr(this.Page, "Usuario ya Existe", "Error", "error");
-                    return validar = true;
-                }
-
-
-                if (usuarios.Email == item.Email)
-                {
-                    Utils.ShowToastr(this.Page, "Correo ya Existe", "Error", "error");
-                    return validar = true;
-                }
-            }
-
-            if (String.IsNullOrWhiteSpace(UsuarioIdTextBox.Text))
-            {
-                Utils.ShowToastr(this, "Debe tener un Id para guardar", "Error", "error");
-                validar = true;
-            }
-
-            return validar;
-        }
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -107,7 +78,6 @@ namespace sCarDealerW.Registros
             {
                 LimpiarCampos();
                 LlenaCampos(u);
-                Utils.ShowToastr(this, "Encontrado!!", "Exito", "info");
             }
             else
             {
@@ -125,6 +95,38 @@ namespace sCarDealerW.Registros
             LimpiarCampos();
         }
 
+
+        protected bool Validar(Usuarios usuarios)
+        {
+            bool validar = false;
+            Expression<Func<Usuarios, bool>> filtro = p => true;
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            var lista = repositorio.GetList(c => true);
+            foreach (var item in lista)
+            {
+                if (usuarios.Usuarioss == item.Usuarioss)
+                {
+                    Utils.ShowToastr(this.Page, "Usuario ya Existe", "Error", "error");
+                    return validar = true;
+                }
+
+
+                if (usuarios.Email == item.Email)
+                {
+                    Utils.ShowToastr(this.Page, "Email ya Existe", "Error", "error");
+                    return validar = true;
+                }
+            }
+
+            if (String.IsNullOrWhiteSpace(UsuarioIdTextBox.Text))
+            {
+                Utils.ShowToastr(this, "Debe tener un Id para guardar", "Error", "error");
+                validar = true;
+            }
+
+            return validar;
+        }
+
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
@@ -137,7 +139,7 @@ namespace sCarDealerW.Registros
                 return;
             }
             u = LlenaClase();
-            if (ValidarNombres(u))
+            if (Validar(u))
             {
                 return;
             }
@@ -197,7 +199,7 @@ namespace sCarDealerW.Registros
                     Utils.ShowToastr(this, "Fallo!! No se Puede Eliminar", "Error", "error");
             }
             else
-                Utils.ShowToastr(this, "No Encontrado!!", "Error", "error");
+                return;
         }
 
         private bool Verificar()
