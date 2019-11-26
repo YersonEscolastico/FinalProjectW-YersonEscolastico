@@ -138,17 +138,16 @@ namespace sCarDealerW.Registros
                 Utils.ShowToastr(this, "Solo Letras en Nombre y NombreUsuario!", "Error", "error");
                 return;
             }
-            u = LlenaClase();
-            if (Validar(u))
-            {
-                return;
-            }
-            else
+            u = LlenaClase();       
             {
                 if (ContraseñaTextBox.Text == VContraseñaTextBox.Text)
                 {
                     if (u.UsuarioId == 0)
                     {
+                        if (Validar(u))
+                        {
+                            return;
+                        }
                         paso = repositorio.Guardar(u);
                         Utils.ShowToastr(this, "Guardado Exitosamente!!", "Exito", "success");
                         LimpiarCampos();
@@ -199,8 +198,13 @@ namespace sCarDealerW.Registros
                     Utils.ShowToastr(this, "Fallo!! No se Puede Eliminar", "Error", "error");
             }
             else
-                return;
+                Utils.ShowToastr(this, "No hay datos para eliminar!!", "Error", "error");
+            if (Utils.ToInt(UsuarioIdTextBox.Text) == 0)
+            {
+                Utils.ShowToastr(this, "Id No Puede Ser Cero", "Error", "error");
+            }
         }
+
 
         private bool Verificar()
         {

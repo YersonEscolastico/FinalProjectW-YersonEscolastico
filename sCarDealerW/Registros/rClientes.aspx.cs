@@ -27,7 +27,7 @@ namespace sCarDealerW.Registros
 
         private void LimpiarCampos()
         {
-            ClienteIdTextBox.Text = string.Empty;
+            ClienteIdTextBox.Text = "0";
             FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             NombresTextBox.Text = string.Empty;
             SexoDropDownList.Text = string.Empty;
@@ -131,7 +131,6 @@ namespace sCarDealerW.Registros
             {
                 LimpiarCampos();
                 LlenaCampos(u);
-                Utils.ShowToastr(this, "Encontrado!!", "Exito", "info");
             }
             else
             {
@@ -161,15 +160,15 @@ namespace sCarDealerW.Registros
                 return;
             }
             u = LlenaClase();
-            if (Validar(u))
-            {
-                return;
-            }
-            else
+
             {
                     if (u.ClienteId == 0)
                     {
-                        paso = repositorio.Guardar(u);
+                    if (Validar(u))
+                    {
+                        return;
+                    }
+                    paso = repositorio.Guardar(u);
                         Utils.ShowToastr(this, "Guardado Exitosamente!!", "Exito", "success");
                         LimpiarCampos();
                     }
@@ -216,10 +215,16 @@ namespace sCarDealerW.Registros
                     Utils.ShowToastr(this, "Fallo!! No se Puede Eliminar", "Error", "error");
             }
             else
-                Utils.ShowToastr(this, "No Encontrado!!", "Error", "error");
+                Utils.ShowToastr(this, "No hay datos para eliminar!!", "Error", "error");
+            if (Utils.ToInt(ClienteIdTextBox.Text) == 0)
+            {
+                Utils.ShowToastr(this, "Id No Puede Ser Cero", "Error", "error");
+            }
+
         }
 
-        private bool Verificar()
+
+            private bool Verificar()
         {
             bool paso = false;
             bool resultado = Regex.IsMatch(NombresTextBox.Text, @"^[a-z A-Z]+$");

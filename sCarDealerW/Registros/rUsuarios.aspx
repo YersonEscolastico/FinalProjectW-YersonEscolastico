@@ -15,7 +15,7 @@
                 <div class="col-md-2">
                     <asp:TextBox type="Number" class="form-control" ID="UsuarioIdTextBox" Text="0" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="UsuarioIdTextBoxRequiredFieldValidator" runat="server" ErrorMessage="Ingrese solo numero!" ControlToValidate="UsuarioIdTextBox" ValidationGroup="Buscar" Display="Dynamic" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="UsuarioIdTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese solo numeros!" ControlToValidate="UsuarioIdTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="UsuarioIdTextBoxRegularExpressionValidator" runat="server" ErrorMessage="Ingrese un valor correcto!" ControlToValidate="UsuarioIdTextBox" ValidationExpression="^[0-9]*$"></asp:RegularExpressionValidator>
                 </div>
 
                 <%--Buscar Button--%>
@@ -61,7 +61,7 @@
                                 <asp:ListItem Text="Usuario"></asp:ListItem>
                             </asp:DropDownList>
                           <asp:RequiredFieldValidator ID="NivelRequiredFieldValidator1" runat="server" ErrorMessage="Elija una opcion!" ValidationGroup="guardar" ControlToValidate="NivelAccesoTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Debe elegir una opcion">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="NivelRequiredFieldValidator"  runat="server" ErrorMessage="Ingrese un usuario correcto!" ControlToValidate="NivelAccesoTextBox"  SetFocusOnError="True"></asp:RegularExpressionValidator>
+                            <asp:RegularExpressionValidator ID="NivelRequiredFieldValidator"  runat="server"  ControlToValidate="NivelAccesoTextBox"  SetFocusOnError="True"></asp:RegularExpressionValidator>
 
                         </div>
                         <%--Usuario--%>

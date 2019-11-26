@@ -92,7 +92,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-4">
-                        <asp:Button ID="Button" runat="server" Class=" col-md-4 btn btn-danger input-sm" Text="Imprimir" OnClick="ImprimirButton_Click" />
+                        <asp:Button ID="Button" runat="server" Class=" col-md-4 btn btn-danger input-sm" Text="Imprimir" OnClick="ImprimirButton_Click"/>
                     </div>
                 </div>
             </div>

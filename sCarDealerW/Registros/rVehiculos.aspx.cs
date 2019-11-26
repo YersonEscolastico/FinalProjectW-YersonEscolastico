@@ -27,7 +27,7 @@ namespace sCarDealerW.Registros
 
         private void LimpiarCampos()
         {
-            VehiculoIdTextBox.Text = string.Empty;
+            VehiculoIdTextBox.Text = "0";
             FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             MarcaDropDownList.Text = string.Empty;
             ModeloDropDownList.Text = string.Empty;
@@ -75,13 +75,48 @@ namespace sCarDealerW.Registros
             u.Placa = PlacaTextBox.Text;
             u.Anio = AnioTextBox.Text;
             u.Descripcion = DescripcionTextBox.Text;
-            u.Precio = Convert.ToDecimal(  PrecioTextBox.Text);
+            u.Precio = Convert.ToDecimal(PrecioTextBox.Text);
             u.Costo = Convert.ToDecimal(CostoTextBox.Text);
             u.Descripcion = DescripcionTextBox.Text;
             u.Estado = EstadoDropDownList.Text;
             return u;
         }
 
+
+        protected bool ValidarNombres(Vehiculos vehiculos)
+        {
+            bool validar = false;
+            Expression<Func<Vehiculos, bool>> filtro = p => true;
+            RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
+            var lista = repositorio.GetList(c => true);
+            foreach (var item in lista)
+            {
+                if (vehiculos.Descripcion == item.Descripcion)
+                {
+                    Utils.ShowToastr(this.Page, "Vehicilo ya Existe", "Error", "error");
+                    return validar = true;
+                }
+                if (vehiculos.Placa == item.Placa)
+                {
+                    Utils.ShowToastr(this.Page, "Ya se ha registrado un vehiculo con esta Placa", "Error", "error");
+                    return validar = true;
+                }
+                if (vehiculos.Vin == item.Vin)
+                {
+                    Utils.ShowToastr(this.Page, "Ya se ha registrado un vehiculo con este VIn", "Error", "error");
+                    return validar = true;
+                }
+
+                if (Convert.ToDecimal(PrecioTextBox.Text) <= Convert.ToDecimal(CostoTextBox.Text))
+                {
+                    Utils.ShowToastr(this.Page, "El Precio debe ser mayor que el Costo", "Error", "error");
+                    return validar = true;
+                }
+
+            }
+
+            return validar;
+        }
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
             RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
@@ -91,7 +126,6 @@ namespace sCarDealerW.Registros
             {
                 LimpiarCampos();
                 LlenaCampos(u);
-                Utils.ShowToastr(this, "Encontrado!!", "Exito", "info");
             }
             else
             {
@@ -115,11 +149,17 @@ namespace sCarDealerW.Registros
             Vehiculos u = new Vehiculos();
             bool paso = false;
 
+
             u = LlenaClase();
 
             {
                 if (u.VehiculoId == 0)
                 {
+                    if (ValidarNombres(u))
+                    {
+                        return;
+                    }
+
                     paso = repositorio.Guardar(u);
                     Utils.ShowToastr(this, "Guardado Exitosamente!!", "Exito", "success");
                     LimpiarCampos();
@@ -167,7 +207,11 @@ namespace sCarDealerW.Registros
                     Utils.ShowToastr(this, "Fallo!! No se Puede Eliminar", "Error", "error");
             }
             else
-                Utils.ShowToastr(this, "No Encontrado!!", "Error", "error");
+                Utils.ShowToastr(this, "No hay datos para eliminar!!", "Error", "error");
+            if (Utils.ToInt(VehiculoIdTextBox.Text) == 0)
+            {
+                Utils.ShowToastr(this, "Id No Puede Ser Cero", "Error", "error");
+            }
         }
     }
 }

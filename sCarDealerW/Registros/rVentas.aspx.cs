@@ -96,27 +96,47 @@ namespace sCarDealerW.Registros
     }
         private bool Validar()
         {
-            bool estato = false;
+            bool estado = false;
 
             if (VentasGridView.Rows.Count == 0)
             {
                 Utils.ShowToastr(this, "Debe agregar detalle.", "Error", "error");
-                estato = true;
+                estado = true;
             }
             if (String.IsNullOrWhiteSpace(VentaIdTextBox.Text))
             {
                 Utils.ShowToastr(this, "Debe tener un Id para guardar", "Error", "error");
-                estato = true;
+                estado = true;
             }
-            return estato;
+
+
+            return estado;
         }
+
+        private bool ValidarD()
+        {
+            bool estado = false;
+
+            decimal precio = Convert.ToDecimal(PrecioTextBox.Text);
+
+            if (precio <=0)
+            {
+                Utils.ShowToastr(this, "Debe agregar un precio", "Error", "error");
+                estado = true;
+            }
+            return estado;
+        }
+
+
+           
+
         protected void BtnGuardar_Click(object sender, EventArgs e)
     {
             Ventas ventas;
             bool paso = false;
 
 
-            if (!Validar())
+            if (Validar())
                 return;
 
             ventas = LlenaClase();
@@ -153,8 +173,6 @@ namespace sCarDealerW.Registros
             if (ventas != null)
             {
                 LlenarCampos(ventas);
-
-                Utils.ShowToastr(this, "Encontrado!!", "Exito", "info");
             }
             else
             {
@@ -186,7 +204,7 @@ namespace sCarDealerW.Registros
                     Utils.ShowToastr(this, "Fallo!! No se Puede Eliminar", "Error", "error");
             }
             else
-                Utils.ShowToastr(this, "No Encontrado!!", "Error", "error");
+                Utils.ShowToastr(this, "No hay datos para eliminar!!", "Error", "error");
             if (Utils.ToInt(VentaIdTextBox.Text) == 0)
             {
                 Utils.ShowToastr(this, "Id No Puede Ser Cero", "Error", "error");
@@ -196,10 +214,14 @@ namespace sCarDealerW.Registros
 
         protected void ButtonAgregar_Click(object sender, EventArgs e)
         {
+
             Ventas venta = new Ventas();
             decimal total = 0;
+            VentasDetalle d = new VentasDetalle();
             RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
 
+            if (ValidarD())
+                return;
 
             int id = Utils.ToInt(VehiculoDropDownList.SelectedValue);
             Vehiculos vehiculos = repositorio.Buscar(id);
@@ -212,6 +234,7 @@ namespace sCarDealerW.Registros
             string descripcion = VehiculoDropDownList.SelectedItem.ToString();
 
             venta.Detalle.Add(new VentasDetalle(Convert.ToInt32(VentaIdTextBox.Text), VehiculoId, subtotal, descripcion,vehiculos.Vin,venta.ClienteId));
+
 
             ViewState["Ventas"] = venta;
             this.BindGrid();
@@ -269,7 +292,7 @@ namespace sCarDealerW.Registros
         {
 
             decimal total = Utils.ToDecimal(TotalTextBox.Text);
-            if (VentasGridView.Rows.Count > 0 && VentasGridView.SelectedIndex >= 0)
+            if (VentasGridView.Rows.Count != 0 && VentasGridView.SelectedIndex != 0)
             {
       
                 Ventas entrada = (Ventas)ViewState["Ventas"];
@@ -304,6 +327,7 @@ namespace sCarDealerW.Registros
 
             TotalTextBox.Text = total.ToString();
         }
+
 
         protected void VentasGridVie_RowCommand(object sender, GridViewCommandEventArgs e)
         {

@@ -294,13 +294,22 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.TextBox CostoTextBox;
 
         /// <summary>
-        /// RequiredFieldValidator5 control.
+        /// ValidaNumPre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ValidaNumPre;
+
+        /// <summary>
+        /// ValidaCampo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidaCampo;
 
         /// <summary>
         /// PrecioTextBox control.
@@ -310,6 +319,15 @@ namespace sCarDealerW.Registros
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PrecioTextBox;
+
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -330,13 +348,13 @@ namespace sCarDealerW.Registros
         protected global::System.Web.UI.WebControls.TextBox FechaRegistroTextBox;
 
         /// <summary>
-        /// FechaRequiredFieldValidator control.
+        /// RequiredFieldValidator5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator FechaRequiredFieldValidator;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
 
         /// <summary>
         /// NuevoButton control.
