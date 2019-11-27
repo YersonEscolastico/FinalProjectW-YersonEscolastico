@@ -71,6 +71,9 @@ Ya por ultimo estan los informes o reportes que seran los encargados de organiza
 ## CONTRIBUIDOR
 
 **1. Yerson Escolastico Martinez**
+## CORREO
+**1. escolasticoy489@gmail.com
+
 
 ## LICENCIA 
 ![aboutKDE_11254](https://user-images.githubusercontent.com/50494642/62062967-9949d980-b25c-11e9-9d1e-ac767314f28e.png)
