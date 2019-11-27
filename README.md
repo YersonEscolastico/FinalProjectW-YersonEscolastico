@@ -54,6 +54,7 @@ Esta ventana podrá ser utilizada para la registrar las vehiculos de los vehicul
 
 
 ## REPORTES
+Ya por ultimo estan los informes o reportes que seran los encargados de organizar y exhibir la información contenida que esten disponibles en la base de datos del sistema. Su función es aplicar un formato determinado a los datos para mostrarlos por medio de un diseño atractivo y que sea fácil de interpretar por los usuarios.
 ![Reportes](https://user-images.githubusercontent.com/50494642/69692068-eacf7b80-110b-11ea-89ff-35a2ba8c864f.PNG)
 
 
@@ -63,8 +64,7 @@ Esta ventana podrá ser utilizada para la registrar las vehiculos de los vehicul
 1. Visual Studio Community
 2. Microsoft SQL Server Management Studio 
 3. Entity Framework
-4. Crystal Reports
-
+4.Conexion a internet
 ## CONTRIBUIDOR
 
 **1. Yerson Escolastico Martinez**
