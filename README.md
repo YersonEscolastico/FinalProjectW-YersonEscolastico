@@ -72,7 +72,7 @@ Ya por ultimo estan los informes o reportes que seran los encargados de organiza
 
 **1. Yerson Escolastico Martinez**
 ## CORREO
-**. escolasticoy489@gmail.com
+**escolasticoy489@gmail.com
 
 
 ## LICENCIA 
