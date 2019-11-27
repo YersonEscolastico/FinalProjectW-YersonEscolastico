@@ -108,6 +108,17 @@ namespace sCarDealerW.Registros
                 Utils.ShowToastr(this, "Debe tener un Id para guardar", "Error", "error");
                 estado = true;
             }
+            if (String.IsNullOrWhiteSpace(VehiculoDropDownList.Text))
+            {
+                Utils.ShowToastr(this, "Debe Agregar un Vehiculo", "Error", "error");
+                estado = true;
+            }
+
+            if (String.IsNullOrWhiteSpace(ClienteDropDownList.Text))
+            {
+                Utils.ShowToastr(this, "Debe Agregar un Cliente", "Error", "error");
+                estado = true;
+            }
 
 
             return estado;
