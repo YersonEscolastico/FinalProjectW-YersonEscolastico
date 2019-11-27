@@ -52,6 +52,9 @@ Esta ventana podrá ser utilizada para la registrar las vehiculos de los vehicul
 ![Ventas](https://user-images.githubusercontent.com/50494642/69692013-c1165480-110b-11ea-857b-06aa402d282e.PNG)
 
 
+## CONSULTAS
+Esta es la ventana de las consultas la cual  sera utilizada para consultar los diferentes datos que esten disponibles en la base de datos del sistema.
+![cUsuarios](https://user-images.githubusercontent.com/50494642/69761642-f326c580-11a2-11ea-8127-eb9cc6dcbcec.PNG)
 
 ## REPORTES
 Ya por ultimo estan los informes o reportes que seran los encargados de organizar y exhibir la información contenida que esten disponibles en la base de datos del sistema. Su función es aplicar un formato determinado a los datos para mostrarlos por medio de un diseño atractivo y que sea fácil de interpretar por los usuarios.
