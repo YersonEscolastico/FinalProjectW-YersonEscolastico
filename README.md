@@ -34,7 +34,7 @@ posibilidad de crear su propio Usuario pulsando sobre el botón crear cuenta.
 Esta ventana podrá ser utilizada para la creación de usuarios para que puedan obtener acceso a los diferentes servicios con los que
 cuenta el sistema.
 
-![Usuarios](https://user-images.githubusercontent.com/50494642/69692450-0dae5f80-110d-11ea-8e94-d2a34022fefa.PNG)
+![usuarios](https://user-images.githubusercontent.com/50494642/69733023-a40f6f00-1167-11ea-9568-6d4b48ada01a.PNG)
 
 ## REGISTRO DE CLIENTES
 Esta ventana podrá ser utilizada para la creación de los nuevos clientes con los que cuente dicha empresa asi como tambien la modificación de los mismos.
