@@ -26,7 +26,7 @@
 
                 <%--Fecha--%>
                 <label class="col-md-2" for="FechaTextBox">Fecha:</label>
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" disabled = "disabled"  />
                 </div> 
             </div>
@@ -37,14 +37,14 @@
                     <%--Nombres--%>
                     <div class="form-group row">
                         <label class="control-label col-md-2" for="NombreTextBox">Nombres:</label>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <asp:TextBox type="text" class="form-control" ID="NombreTextBox" placeholder="Ingrese Nombres" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="NombreRequiredFieldValidator" runat="server" ErrorMessage="Ingrese algun nombre!" ValidationGroup="guardar" ControlToValidate="NombreTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Nombre obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="NombreRegularExpressionValidator" runat="server" ErrorMessage="Ingrese un nombre correcto!" ControlToValidate="NombreTextBox" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
                         </div>
 
                         <%--Correo--%>
-                        <label class="control-label  col-md-3" for="CorreoTextBox">Email:</label>
+                        <label class="control-label  col-md-2" for="CorreoTextBox">Email:</label>
                         <div class="col-md-4">
                             <asp:TextBox type="email" class="form-control" ID="CorreoTextBox" placeholder="Ingrese Correo Electronico" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese Correo Electronico!" ValidationGroup="guardar" ControlToValidate="CorreoTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Correo obligatorio&quot;&gt;Por favor llenar el campo Correo">*</asp:RequiredFieldValidator>

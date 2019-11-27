@@ -62,6 +62,9 @@
         <div class="panel" style="background-color: #0094ff">
             <div class="panel-heading" style="font-family: Arial Black; font-size: 20px; text-align: center; color: Black">CAR DEALER SFM</div>
         </div>
+        
+            <div class="panel panel-primary">
+                <div class="panel-body">
         <div class="row">
             <div class="col-sm-6 col-md-4 col-md-offset-4">
                 <h1 class="text-center login-title">Login</h1>
@@ -75,30 +78,25 @@
                         <br />
                         <div class="text-center">
                             <asp:TextBox ID="UsuarioTextBox" placeholder="Usuario" runat="server" Width="228px"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese Correo Electronico!" ValidationGroup="Iniciar" ControlToValidate="UsuarioTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Correo obligatorio&quot;&gt;Por favor llenar el campo Correo">*</asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ingrese Contrasena!" ValidationGroup="Iniciar" ControlToValidate="UsuarioTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Correo obligatorio&quot;&gt;Por favor llenar el campo Correo">*</asp:RequiredFieldValidator>
 
                         </div>
                         <br />
                         <div class="text-center">
-                            <asp:TextBox ID="PasswordTextBox" type="password" placeholder="Password" runat="server" Width="228px"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ingrese Correo Electronico!" ValidationGroup="Iniciar" ControlToValidate="PasswordTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Correo obligatorio&quot;&gt;Por favor llenar el campo Correo">*</asp:RequiredFieldValidator>
+                            <asp:TextBox ID="PasswordTextBox" type="password" placeholder="Contraseña" runat="server" Width="228px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Ingrese Contrasena!" ValidationGroup="Iniciar" ControlToValidate="PasswordTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Correo obligatorio&quot;&gt;Por favor llenar el campo Correo">*</asp:RequiredFieldValidator>
 
                         </div>
                         <br />
                         <asp:Button runat="server" Text="Iniciar" class="btn btn-md btn-success btn-block" OnClick="LoginButton_Click" />
-                        <label class="checkbox pull-center">
-                            <input type="checkbox" value="remember-me">
-                            Recuerdame               
-                        </label>
+
                         <br />
                     </form>
-                </div>
-                <div class="text-center">
-                    <a href="Registros/rUsuarios.aspx" class="text-center new-account">Crear Cuenta </a>
                 </div>
             </div>
         </div>
     </div>
+                </div></div>
 </body>
 
 </html>

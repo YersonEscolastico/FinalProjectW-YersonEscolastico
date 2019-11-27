@@ -27,7 +27,7 @@
 
                 <%--Fecha--%>
                 <label class=" col-md-1" for="FechaTextBox">Fecha:</label>
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" disabled = "disabled"  />
                 </div>
             </div>
@@ -60,7 +60,7 @@
                              </div>
 
                         <%--Descripcion--%>
-                        <label class="control-label col-md-1" for="DescripcionTextBox">Descripcion:</label>
+                        <label class="control-label col-md-2" for="DescripcionTextBox">Descripcion:</label>
                         <div class=" col-md-4">
                             <asp:TextBox type="DescripcionTextBox" class="form-control" ID="DescripcionTextBox" placeholder="Ingrese Descripcion" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Ingrese algun Telefono!" ValidationGroup="guardar" ControlToValidate="DescripcionTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Descripcion">*</asp:RequiredFieldValidator>
@@ -91,7 +91,7 @@
                             </div>
                         <br />
                         <%--Vin--%>
-                        <label class="control-label col-md-1" for="VinTextBox">Vin:</label>
+                        <label class="control-label col-md-2" for="VinTextBox">Vin:</label>
                         <div class="col-md-4">
                             <asp:TextBox type="text" class="form-control" ID="VinTextBox" placeholder="Ingrese Vin" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="VinRequiredFieldValidator" runat="server" ErrorMessage="Ingrese Vin!" ValidationGroup="guardar" ControlToValidate="VinTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Vin obligatorio&quot;&gt;Por favor llenar el campo Vin">*</asp:RequiredFieldValidator>
@@ -116,7 +116,7 @@
                         </div>
                         <br />
                         <%--Anio--%>
-                        <label class="control-label col-md-1" for="AnioTextBox">Anio:</label>
+                        <label class="control-label col-md-2" for="AnioTextBox">Anio:</label>
                         <div class=" col-md-4">
                             <asp:TextBox type="text" class="form-control" ID="AnioTextBox" placeholder="Ingrese año" runat="server" MaxLength="11"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="CedulaRequiredFieldValidator" runat="server" ErrorMessage="Ingrese Año!" ValidationGroup="guardar" ControlToValidate="AnioTextBox" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Campo Descripcion obligatorio&quot;&gt;Por favor llenar el campo Nombre">*</asp:RequiredFieldValidator>
@@ -136,7 +136,7 @@
 
 
                         <%--Estado--%>
-                        <label class="control-label col-md-1" for="EstadoTextBox">Estado:</label>
+                        <label class="control-label col-md-2" for="EstadoTextBox">Estado:</label>
                         <div class=" col-md-4">
                             <asp:DropDownList ID="EstadoDropDownList" runat="server" Class="form-control">
                                 <asp:ListItem Selected="True" Value="">Seleccione Uno</asp:ListItem>
@@ -159,14 +159,14 @@
         
                     </div>
                     <%--Precio--%>
-                    <label class="control-label col-md-1" for="PrecioTextBox">Precio:</label>
+                    <label class="control-label col-md-2" for="PrecioTextBox">Precio:</label>
                     <div class="col-md-4">
                         <asp:TextBox type="Number" class="form-control" ID="PrecioTextBox" Text="0" runat="server"></asp:TextBox>
                      <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="PrecioTextBox" ValidationExpression="^[0.00-9.00]*" Text="*" ForeColor="Red" Display="Dynamic" ToolTip="Entrada no valida" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PrecioTextBox" ForeColor="Red" Display="Dynamic" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
         
                         </div>
-                    <br />    <br />    <br />
+                    <br /> 
                     <%--Fecha Registro--%>
                     <label class="control-label col-md-2" for="FechaRegistroTextBox">Fecha Registro:</label>
                     <div class="col-md-4">

@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using Entidades;
 using sCarDealerW.Utilitarios;
 using System;
@@ -81,7 +82,6 @@ namespace sCarDealerW.Registros
             ventas.FechaRegistro = DateTime.Now;
             ventas.VentaId = Utils.ToInt(VentaIdTextBox.Text);
             ventas.ClienteId = Utils.ToInt(ClienteDropDownList.Text);
-            ventas.UsuarioId = Utils.ToInt(UsuarioDropDownList.Text);
             ventas.VehiculoId = Utils.ToInt(VehiculoDropDownList.Text);
             ventas.Total = Convert.ToDecimal(TotalTextBox.Text);
             ventas.Precio = Convert.ToDecimal(PrecioTextBox.Text);
@@ -233,7 +233,7 @@ namespace sCarDealerW.Registros
             var subtotal = vehiculos.Precio = Convert.ToDecimal(PrecioTextBox.Text);
             string descripcion = VehiculoDropDownList.SelectedItem.ToString();
 
-            venta.Detalle.Add(new VentasDetalle(Convert.ToInt32(VentaIdTextBox.Text), VehiculoId, subtotal, descripcion,vehiculos.Vin,venta.ClienteId));
+            venta.Detalle.Add(new VentasDetalle(Convert.ToInt32(VentaIdTextBox.Text), VehiculoId, subtotal, descripcion,vehiculos.Vin));
 
 
             ViewState["Ventas"] = venta;
@@ -360,13 +360,6 @@ namespace sCarDealerW.Registros
             VehiculoDropDownList.DataValueField = "VehiculoId";
             VehiculoDropDownList.DataTextField = "Descripcion";
             VehiculoDropDownList.DataBind();
-
-            RepositorioBase<Usuarios> vee = new RepositorioBase<Usuarios>();
-            UsuarioDropDownList.Items.Clear();
-            UsuarioDropDownList.DataSource = vee.GetList(x => true);
-            UsuarioDropDownList.DataValueField = "UsuarioId";
-            UsuarioDropDownList.DataTextField = "Usuarioss";
-            UsuarioDropDownList.DataBind();
 
             ViewState["Ventas"] = new Ventas();
         }

@@ -12,14 +12,6 @@
             <div class="panel panel-primary">
                 <div class="panel-body">
 
-                        <%--Selercionar solo por fecha--%>
-                         <div class="form-group row">
-                        <label for="CheckBox" class="col-md-2 col-form-label">Filtral por fecha?</label>
-                        <div class="col-ms-2">
-                            <asp:CheckBox runat="server" CssClass="custom-checkbox" ID="CheckBox" />
-                        </div>
-                    </div>
-
                     <%--Desde--%>
                 <div class="form-group row">
                     <label class="control-label col-md-2" for="DesdeTextBox">Desde:</label>
@@ -70,7 +62,7 @@
                                 <asp:GridView ID="DatosGridView"
                                     runat="server"
                                     CssClass="table table-condensed table-bordered table-responsive"
-                                    CellPadding="4" ForeColor="#333333" GridLines="None">
+                                    CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false">
 
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
@@ -79,6 +71,15 @@
                                             DataNavigateUrlFormatString= "~/Registros/rClientes.aspx?Id={0}"
                                             Text="Editar"></asp:HyperLinkField>
                                     </Columns>
+
+                                         <Columns>
+                                    <asp:BoundField DataField="ClienteId" HeaderText="ClienteId" />                       
+                                    <asp:BoundField DataField="Nombres" HeaderText="Nombres" />  
+                                    <asp:BoundField DataField="Email" HeaderText="Email" /> 
+                                     <asp:BoundField DataField="Cedula" HeaderText="Cedula" /> 
+                                  <asp:BoundField DataField="Telefono" HeaderText="Telefono" /> 
+                                    <asp:BoundField DataField="FechaRegistro" HeaderText="FechaRegistro" DataFormatString="{0:dd/MM/yy}" /> 
+                                </Columns>
                                     <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                     <RowStyle BackColor="#EFF3FB" />
                                 </asp:GridView>
@@ -96,6 +97,7 @@
                     </div>
                 </div>
             </div>
+            <br /><br /><br /><br /><br />
         </div>
     </div>
 </asp:Content>

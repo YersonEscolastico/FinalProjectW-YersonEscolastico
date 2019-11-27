@@ -16,7 +16,6 @@ namespace Entidades
         public string Descripcion { get; set; }
         public decimal Precio { get; set; }
         public string Vin  { get; set; }
-        public int ClienteId { get; set; }
         public VentasDetalle()
         {
             VentasDetalleID = 0;
@@ -25,17 +24,15 @@ namespace Entidades
             Descripcion = "";
             Precio = 0;
             Vin = "";
-            ClienteId = 0;
         }
 
-        public VentasDetalle(int ventaId, int vehiculoId, decimal precio, string descripcion,string vin, int clienteid)
+        public VentasDetalle(int ventaId, int vehiculoId, decimal precio, string descripcion,string vin)
         {
             VentaId = ventaId;
             VehiculoId = vehiculoId;
             Precio = precio;
             Descripcion = descripcion;
             Vin = vin;
-            ClienteId = clienteid;
         }
     }
 }

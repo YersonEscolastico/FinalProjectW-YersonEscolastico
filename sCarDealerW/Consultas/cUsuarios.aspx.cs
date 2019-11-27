@@ -50,11 +50,11 @@ namespace sCarDealerW.Consultas
                         filtros = c => c.NivelAcceso.Contains(CriterioTextBox.Text);
                         break; //Tipo
                 }
-                if (CheckBox.Checked == true)
-                {
-                    lista = repositorio.GetList(filtros).Where(x => x.Fecha.Date >= Desde && x.Fecha.Date <= Hasta).ToList();
-                }
-                else
+            if (DesdeTextBox.Text != "" & HastaTextBox.Text != "")
+            {
+                lista = repositorio.GetList(filtros).Where(x => x.Fecha.Date >= Desde && x.Fecha.Date <= Hasta).ToList();
+            }
+            else
                 {
                     lista = repositorio.GetList(filtros);
                 }

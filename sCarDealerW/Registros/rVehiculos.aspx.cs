@@ -36,8 +36,8 @@ namespace sCarDealerW.Registros
             PlacaTextBox.Text = string.Empty;
             AnioTextBox.Text = string.Empty;
             DescripcionTextBox.Text = string.Empty;
-            PrecioTextBox.Text = string.Empty;
-            CostoTextBox.Text = string.Empty;
+            PrecioTextBox.Text = "0";
+            CostoTextBox.Text = "0";
             EstadoDropDownList.Text = string.Empty;
             FechaRegistroTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
@@ -176,7 +176,7 @@ namespace sCarDealerW.Registros
                         Utils.ShowToastr(this, "Modificado Exitosamente!!", "Exito", "success");
                     }
                     else
-                        Utils.ShowToastr(this, "No Encontrado!!", "Error", "error");
+                        Utils.ShowToastr(this, "No ha podido Guardar!!", "Error", "error");
                 }
 
                 if (paso)

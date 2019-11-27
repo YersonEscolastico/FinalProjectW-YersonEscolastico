@@ -42,9 +42,9 @@ namespace sCarDealerW.Consultas
                     filtros = c => c.VentaId == criterio;
                     break;
             }
-            if (CheckBox.Checked == true)
+            if (DesdeTextBox.Text != "" & HastaTextBox.Text != "")
             {
-                lista = repositorio.GetList(filtros).Where(x => x.FechaRegistro.Date >= Desde && x.FechaRegistro.Date <= Hasta).ToList();
+                lista = repositorio.GetList(filtros).Where(x => x.FechaVenta.Date >= Desde && x.FechaVenta.Date <= Hasta).ToList();
             }
             else
             {
@@ -52,6 +52,11 @@ namespace sCarDealerW.Consultas
             }
             DatosGridView.DataSource = lista;
             DatosGridView.DataBind();
+        }
+
+        protected void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(@"~\Reportes\VentasReport.aspx");
         }
     }
 }

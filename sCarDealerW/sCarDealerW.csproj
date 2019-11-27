@@ -127,6 +127,7 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="HomePage.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Registros\rClientes.aspx" />
     <Content Include="Registros\rUsuarios.aspx" />
@@ -135,6 +136,8 @@
     <Content Include="Reportes\ClientesReport.aspx" />
     <Content Include="Reportes\UsuariosReport.aspx" />
     <Content Include="Reportes\VehiculosReport.aspx" />
+    <Content Include="Reportes\VentasReport.aspx" />
+    <Content Include="Resources\Car.jpg" />
     <Content Include="Resources\hh.ico" />
     <Content Include="Resources\usuari.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -278,6 +281,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -335,6 +345,13 @@
     <Compile Include="Reportes\VehiculosReport.aspx.designer.cs">
       <DependentUpon>VehiculosReport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\VentasReport.aspx.cs">
+      <DependentUpon>VentasReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\VentasReport.aspx.designer.cs">
+      <DependentUpon>VentasReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SiteMaster.Master.cs">
       <DependentUpon>SiteMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -353,6 +370,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VehiculosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="VentasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VentasDataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -381,6 +403,17 @@
     <Content Include="VehiculosDataSet.xss">
       <DependentUpon>VehiculosDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="VentasDataSet.xsc">
+      <DependentUpon>VentasDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="VentasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VentasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="VentasDataSet.xss">
+      <DependentUpon>VentasDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -403,6 +436,10 @@
       <Project>{18B0AC21-F8F8-4380-9318-0F9D1CE0B971}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{A26F3E81-914A-4F72-B6F6-37847CD3D8EC}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{947FC822-D829-4B48-A8CB-9DE22F2F65FF}</Project>
       <Name>Entidades</Name>
@@ -411,6 +448,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Reportes\cReport.rdlc" />
     <EmbeddedResource Include="Reportes\uReport.rdlc" />
+    <EmbeddedResource Include="Reportes\vdReport.rdlc" />
     <EmbeddedResource Include="Reportes\vReport.rdlc" />
   </ItemGroup>
   <PropertyGroup>

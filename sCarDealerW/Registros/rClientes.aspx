@@ -24,7 +24,7 @@
 
                 <%--Fecha--%>
                 <label class=" col-md-2" for="FechaTextBox">Fecha:</label>
-                <div class=" col-md-2">
+                <div class=" col-md-3">
                     <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" disabled="disabled" />
                 </div>
             </div>
@@ -55,9 +55,7 @@
                             <asp:RegularExpressionValidator ID="NivelRequiredFieldValidator" runat="server" ErrorMessage="Elija una opcion!" ControlToValidate="SexoDropDownList" ValidationExpression="(^[a-zA-Z'.\s]{1,20}$)" SetFocusOnError="True"></asp:RegularExpressionValidator>
 
                         </div>
-
                     </div>
-
                 </div>
                 <%--Email--%>
 

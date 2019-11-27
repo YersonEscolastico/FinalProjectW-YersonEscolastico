@@ -12,13 +12,6 @@
             <div class="panel panel-primary">
                 <div class="panel-body">
 
-                        <%--Selercionar solo por fecha--%>
-                         <div class="form-group row">
-                        <label for="CheckBox" class="col-md-2 col-form-label">Filtral por fecha?</label>
-                        <div class="col-ms-2">
-                            <asp:CheckBox runat="server" CssClass="custom-checkbox" ID="CheckBox" />
-                        </div>
-                    </div>
 
                     <%--Desde--%>
                 <div class="form-group row">
@@ -37,7 +30,7 @@
 
                                 <%--DropDownList--%>
                     <div class="form-group row">
-                        <label class="control-label col-md-2" for="DesdeTextBox">Seleccione uno:</label>
+                        <label class="control-label col-md-2" for="DesdeTextBox">Elija una opcion:</label>
                         <div class="col-md-2">
                             <asp:DropDownList ID="BuscarPorDropDownList" runat="server" CssClass="form-control input-sm">
                                 <asp:ListItem>Todos</asp:ListItem>
@@ -69,7 +62,7 @@
                                 <asp:GridView ID="DatosGridView"
                                     runat="server"
                                     CssClass="table table-condensed table-bordered table-responsive"
-                                    CellPadding="4" ForeColor="#333333" GridLines="None">
+                                    CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false">
 
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
@@ -77,7 +70,16 @@
                                             DataNavigateUrlFields="UsuarioID"
                                             DataNavigateUrlFormatString= "~/Registros/rUsuarios.aspx?Id={0}"
                                             Text="Editar"></asp:HyperLinkField>
-                                    </Columns>
+                                    </Columns>                                   
+                                         <Columns>
+                                    <asp:BoundField DataField="UsuarioId" HeaderText="ClienteId" />                       
+                                    <asp:BoundField DataField="Nombres" HeaderText="Nombres" />  
+                                    <asp:BoundField DataField="Email" HeaderText="Email" /> 
+                                     <asp:BoundField DataField="Usuarioss" HeaderText="Usuarioss" /> 
+                                  <asp:BoundField DataField="NivelAcceso" HeaderText="NivelAcceso" /> 
+                                  <asp:BoundField DataField="TotalVentas" HeaderText="TotalVentas" /> 
+                                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:dd/MM/yy}" /> 
+                                </Columns>
                                     <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                     <RowStyle BackColor="#EFF3FB" />
                                 </asp:GridView>
@@ -95,6 +97,7 @@
                     </div>
                 </div>
             </div>
+            <br /><br /><br /><br /><br />
         </div>
     </div>
 </asp:Content>

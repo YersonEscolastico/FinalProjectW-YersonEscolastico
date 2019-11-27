@@ -50,7 +50,7 @@ namespace sCarDealerW.Consultas
                     filtros = c => c.Sexo.Contains(CriterioTextBox.Text);
                     break; //Tipo
             }
-            if (CheckBox.Checked == true)
+            if (DesdeTextBox.Text!= "" & HastaTextBox.Text != "")
             {
                 lista = repositorio.GetList(filtros).Where(x => x.Fecha.Date >= Desde && x.Fecha.Date <= Hasta).ToList();
             }
@@ -66,6 +66,7 @@ namespace sCarDealerW.Consultas
         protected void ImprimirButton_Click(object sender, EventArgs e)
         {
             Response.Redirect(@"~\Reportes\ClientesReport.aspx");
+            
         }
     }
 }

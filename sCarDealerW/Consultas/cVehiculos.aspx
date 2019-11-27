@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true" CodeBehind="cVehiculos.aspx.cs" Inherits="sCarDealerW.Consultas.cVehiculos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    
-    <div class="container">
+   <div class="container">
         <div class="panel" style="background-color: #0094ff">
             <div class="panel-heading" style="font-family: Arial Black; font-size: 20px; text-align: center; color: Black">Consulta de Vehiculos</div>
         </div>
@@ -12,13 +11,6 @@
             <div class="panel panel-primary">
                 <div class="panel-body">
 
-                        <%--Selercionar solo por fecha--%>
-                         <div class="form-group row">
-                        <label for="CheckBox" class="col-md-2 col-form-label">Filtral por fecha?</label>
-                        <div class="col-ms-2">
-                            <asp:CheckBox runat="server" CssClass="custom-checkbox" ID="CheckBox" />
-                        </div>
-                    </div>
 
                     <%--Desde--%>
                 <div class="form-group row">
@@ -70,7 +62,7 @@
                                 <asp:GridView ID="DatosGridView"
                                     runat="server"
                                     CssClass="table table-condensed table-bordered table-responsive"
-                                    CellPadding="4" ForeColor="#333333" GridLines="None">
+                                    CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false">
 
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
@@ -79,6 +71,17 @@
                                             DataNavigateUrlFormatString= "~/Registros/rVehiculos.aspx?Id={0}"
                                             Text="Editar"></asp:HyperLinkField>
                                     </Columns>
+
+                                       <Columns>
+                                    <asp:BoundField DataField="VehiculoId" HeaderText="VehiculoId" />                       
+                                    <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />  
+                                    <asp:BoundField DataField="Vin" HeaderText="Vin" /> 
+                                     <asp:BoundField DataField="Marca" HeaderText="Marca" /> 
+                                  <asp:BoundField DataField="Placa" HeaderText="Placa" /> 
+                                  <asp:BoundField DataField="Precio" HeaderText="Precio" /> 
+                                    <asp:BoundField DataField="FechaRegistro" HeaderText="FechaRegistro" DataFormatString="{0:dd/MM/yy}" /> 
+                                </Columns>
+
                                     <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                     <RowStyle BackColor="#EFF3FB" />
                                 </asp:GridView>
@@ -96,6 +99,7 @@
                     </div>
                 </div>
             </div>
+            <br />  <br />
         </div>
     </div>
 </asp:Content>

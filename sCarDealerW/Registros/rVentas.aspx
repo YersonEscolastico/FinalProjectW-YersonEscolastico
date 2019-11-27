@@ -25,15 +25,8 @@
 
                 <%--Fecha--%>
                 <label class="col-md-1" for="FechaTextBox">Fecha:</label>
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" />
-                </div>
-
-                <%--Uauarios--%>
-                <label class="control-label col-md-1" for="UsuarioTextBox">Usuario:</label>
-                <div class=" col-md-2">
-                    <asp:DropDownList class="form-control" ID="UsuarioDropDownList" disabled="disabled" Increment="0" runat="server"></asp:DropDownList>
-
                 </div>
             </div>
             <br>
@@ -90,14 +83,13 @@
                                     <asp:TemplateField>
                                         <ItemTemplate>
                                             <asp:Button ID="RemoveLinkButton" runat="server" CausesValidation="false" CommandName="Select"
-                                                Text="Remover " class="btn btn-danger btn-sm" OnClick="RemoveLinkButton_Click" />
+                                                Text="Remover" class="btn btn-danger btn-sm" OnClick="RemoveLinkButton_Click" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
 
                                 
                                 <Columns>
-                                    <asp:BoundField DataField="ClienteId" HeaderText="ClienteId" />
                                     <asp:BoundField DataField="VehiculoId" HeaderText="VehiculoId" />                       
                                     <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
                                     <asp:BoundField DataField="Vin" HeaderText="Vin" />
