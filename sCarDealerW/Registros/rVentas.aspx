@@ -28,6 +28,14 @@
                 <div class="col-md-3">
                     <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" />
                 </div>
+
+                
+                        <%--Usuario--%>
+                    <div class="form-group row">
+                        <label class="control-label col-md-1" for="UsuarioTextBox" >Usuario:</label>
+                        <div class=" col-md-2">
+                            <asp:DropDownList class="form-control" ID="UsuarioDropDownList" AutoPostBack="true" runat="server"  disabled = "disabled" ></asp:DropDownList>
+                        </div>
             </div>
             <br>
 
@@ -52,12 +60,14 @@
 
             <div class="panel panel-primary">
                 <div class="panel-body">
+
                     <%--Vehiculo--%>
                     <div class="form-group row">
                         <label class="control-label col-md-2" for="VehiculoTextBox">Vehiculo:</label>
                         <div class=" col-md-3">
                             <asp:DropDownList class="form-control" ID="VehiculoDropDownList" AutoPostBack="true" runat="server" OnSelectedIndexChanged="PrecioDropDown_SelectedIndexChanged"></asp:DropDownList>
                         </div>
+
 
                         <%--Precio--%>
                         <label class="control-label col-md-1" for="PrecioTextBox">Precio:</label>
@@ -127,4 +137,5 @@
             <hr>
         </div>
     </div>
+        </div>
 </asp:Content>

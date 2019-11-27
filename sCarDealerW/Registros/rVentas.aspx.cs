@@ -83,6 +83,7 @@ namespace sCarDealerW.Registros
             ventas.VentaId = Utils.ToInt(VentaIdTextBox.Text);
             ventas.ClienteId = Utils.ToInt(ClienteDropDownList.Text);
             ventas.VehiculoId = Utils.ToInt(VehiculoDropDownList.Text);
+            ventas.UsuarioId = Utils.ToInt(UsuarioDropDownList.Text);
             ventas.Total = Convert.ToDecimal(TotalTextBox.Text);
             ventas.Precio = Convert.ToDecimal(PrecioTextBox.Text);
             return ventas;
@@ -371,6 +372,15 @@ namespace sCarDealerW.Registros
             VehiculoDropDownList.DataValueField = "VehiculoId";
             VehiculoDropDownList.DataTextField = "Descripcion";
             VehiculoDropDownList.DataBind();
+
+            RepositorioBase<Usuarios> U = new RepositorioBase<Usuarios>();
+            UsuarioDropDownList.Items.Clear();
+            UsuarioDropDownList.DataSource = U.GetList(x => true);
+            UsuarioDropDownList.DataValueField = "UsuarioId";
+            UsuarioDropDownList.DataTextField = "Usuarioss";
+            UsuarioDropDownList.DataBind();
+
+
 
             ViewState["Ventas"] = new Ventas();
         }
