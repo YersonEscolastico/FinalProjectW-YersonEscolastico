@@ -67,6 +67,7 @@ namespace sCarDealerW.Registros
        
             VentaIdTextBox.Text = ventas.VentaId.ToString();
             ClienteDropDownList.Text = ventas.ClienteId.ToString();
+            UsuarioDropDownList.Text = ventas.UsuarioId.ToString();
             TotalTextBox.Text = ventas.Total.ToString();
             PrecioTextBox.Text = Convert.ToString(s.Precio);
             FechaRegistroTextBox.Text = ventas.FechaRegistro.ToString("yyyy-MM-dd");
@@ -99,6 +100,16 @@ namespace sCarDealerW.Registros
         {
             bool estado = false;
 
+            if (VentasGridView.Rows.Count == 0)
+            {
+                Utils.ShowToastr(this, "Debe agregar detalle.", "Error", "error");
+                estado = true;
+            }
+            if (String.IsNullOrWhiteSpace(VentaIdTextBox.Text))
+            {
+                Utils.ShowToastr(this, "Debe tener un Id para guardar", "Error", "error");
+                estado = true;
+            }
             if (String.IsNullOrWhiteSpace(VehiculoDropDownList.Text))
             {
                 Utils.ShowToastr(this, "Debe Agregar un Vehiculo", "Error", "error");
@@ -154,7 +165,7 @@ namespace sCarDealerW.Registros
         }
 
 
-           
+    
 
         protected void BtnGuardar_Click(object sender, EventArgs e)
     {
@@ -252,6 +263,21 @@ namespace sCarDealerW.Registros
 
             if (Validarr())
                 return;
+      
+            Ventas P = new Ventas();
+            P = (Ventas)ViewState["Ventas"];
+            Vehiculos A = new RepositorioBase<Vehiculos>().Buscar(Utils.ToInt(VehiculoDropDownList.SelectedValue));
+
+            int idd = Utils.ToInt(VehiculoDropDownList.SelectedValue);
+
+            foreach (var item in P.Detalle.ToList())
+            {
+                if (idd == item.VehiculoId)
+                {
+                    Utils.ShowToastr(this, "Ya se ha agregado", "Error", "error");
+                    return;
+                }
+            }
 
             int id = Utils.ToInt(VehiculoDropDownList.SelectedValue);
             Vehiculos vehiculos = repositorio.Buscar(id);

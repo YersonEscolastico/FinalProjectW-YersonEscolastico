@@ -29,6 +29,7 @@ namespace sCarDealerW
             {
 
 
+                string password = Utils.Hash(PasswordTextBox.Text);
                 if (repositorio.Auntenticar(UsuarioTextBox.Text, PasswordTextBox.Text))
                 {
                     FormsAuthentication.RedirectFromLoginPage(user.Usuarioss, true);

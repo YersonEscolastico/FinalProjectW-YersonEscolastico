@@ -438,7 +438,7 @@
         <Top>8.99584cm</Top>
         <Left>5.36979cm</Left>
         <Height>1.2cm</Height>
-        <Width>16.17771cm</Width>
+        <Width>16.1777cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -605,14 +605,16 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!Total.Value</Value>
+                <Value>=Sum(Fields!Total.Value)</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <Color>#333333</Color>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>

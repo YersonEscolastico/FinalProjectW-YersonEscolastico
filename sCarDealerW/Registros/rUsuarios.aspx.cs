@@ -63,7 +63,7 @@ namespace sCarDealerW.Registros
             u.Nombres = NombreTextBox.Text;
             u.Usuarioss = NombreUserTextBox.Text;
             u.Email = CorreoTextBox.Text;
-            u.Clave = ContraseñaTextBox.Text;
+            u.Clave = Utils.Hash(ContraseñaTextBox.Text);
             u.NivelAcceso = NivelAccesoTextBox.Text;
             return u;
         }

@@ -1,4 +1,4 @@
 create database sCarDB
 
-USE sCarDB
+USE sCarDb
 Select *from Usuarios

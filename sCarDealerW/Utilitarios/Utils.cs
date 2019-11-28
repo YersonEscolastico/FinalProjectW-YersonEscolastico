@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 
@@ -38,9 +40,25 @@ namespace sCarDealerW.Utilitarios
                   String.Format("toastr.{0}('{1}', '{2}');", type.ToLower(), message, title), addScriptTags: true);
         }
 
+        public static void MostrarMensaje(this Page page, string message, string title, string type = "info")
+        {
+            page.ClientScript.RegisterStartupScript(page.GetType(), "toastr_message",
+                 String.Format("toastr.{0}('{1}', '{2}');", type.ToLower(), message, title), addScriptTags: true);
+        }
+
+
+        public static string Hash(string input)
+        {
+            var hash = (new SHA1Managed()).ComputeHash(Encoding.UTF8.GetBytes(input));
+            return string.Join("", hash.Select(b => b.ToString("x2")).ToArray());
+        }
+
         internal static int ToInt(object text)
         {
             throw new NotImplementedException();
         }
+
+
+
     }
 }
