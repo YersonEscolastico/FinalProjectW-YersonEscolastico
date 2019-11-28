@@ -37,7 +37,7 @@
                 <div class="panel-body">
                     <%--Marca--%>
                     <div class="form-group row">
-                        <label class="control-label col-md-2" for="MarcaTextBox">Marca:</label>
+                        <label class="control-label col-md-2" for="MarcaDropDownList">Marca:</label>
                         <div class="col-md-4">
                             <asp:DropDownList ID="MarcaDropDownList" runat="server" Class="form-control">
                                 <asp:ListItem Selected="True" Value="">Seleccione Uno</asp:ListItem>
@@ -54,8 +54,8 @@
                                 <asp:ListItem Text="Lamborghini"></asp:ListItem>
 
                             </asp:DropDownList>
-                                 <asp:RequiredFieldValidator ID="MarcaRequiredFieldValidator1" runat="server" ErrorMessage="Elija una opcion!" ValidationGroup="guardar" ControlToValidate="MarcaDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Debe elegir una opcion">*</asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="MarcaRequiredFieldValidator"  runat="server" ControlToValidate="MarcaDropDownList" SetFocusOnError="True"></asp:RegularExpressionValidator>
+                            <asp:RequiredFieldValidator ID="MarcaRequiredFieldValidator1" runat="server" ErrorMessage="Elija una opcion!" ValidationGroup="guardar" ControlToValidate="MarcaDropDownList" Display="Dynamic" Font-Bold="True" ForeColor="Red" SetFocusOnError="True" ToolTip="Debe elegir una opcion">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="MarcaRequiredFieldValidator"  runat="server"  ControlToValidate="MarcaDropDownList"  SetFocusOnError="True"></asp:RegularExpressionValidator>
 
                              </div>
 
@@ -176,7 +176,8 @@
                         </div>
                     <label class="control-label col-sm-1" for="hh"></label>
                 </div>
-
+                <script type="text/javascript"> function VerificarCantidad(sender, args) { args.IsValid = (args.Value.length <= 11); }</script>
+                <hr>
             </div>
 
 

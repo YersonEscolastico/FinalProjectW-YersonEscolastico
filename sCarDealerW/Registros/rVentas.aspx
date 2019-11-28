@@ -28,13 +28,12 @@
                 <div class="col-md-3">
                     <asp:TextBox ID="FechaTextBox" class="form-control input-group" TextMode="Date" runat="server" />
                 </div>
-
+                <br>
                 
                         <%--Usuario--%>
                     <div class="form-group row">
-                        <label class="control-label col-md-1" for="UsuarioTextBox" >Usuario:</label>
                         <div class=" col-md-2">
-                            <asp:DropDownList class="form-control" ID="UsuarioDropDownList" AutoPostBack="true" runat="server"   ></asp:DropDownList>
+                            <asp:DropDownList class="form-control" ID="UsuarioDropDownList" AutoPostBack="true" runat="server"  disabled = "disabled"  ></asp:DropDownList>
                         </div>
             </div>
             <br>

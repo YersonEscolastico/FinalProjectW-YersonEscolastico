@@ -112,19 +112,19 @@ namespace sCarDealerW.Registros
             }
             if (String.IsNullOrWhiteSpace(VehiculoDropDownList.Text))
             {
-                Utils.ShowToastr(this, "Debe Agregar un Vehiculo", "Error", "error");
+                Utils.ShowToastr(this, "Debe registrar un vehiculo en el registro de Vehiculos!!", "Error", "error");
                 estado = true;
             }
 
             if (String.IsNullOrWhiteSpace(ClienteDropDownList.Text))
             {
-                Utils.ShowToastr(this, "Debe Agregar un Cliente", "Error", "error");
+                Utils.ShowToastr(this, "Debe registrar un Cliente en el registro de Cliente!!", "Error", "error");
                 estado = true;
             }
 
             if (String.IsNullOrWhiteSpace(UsuarioDropDownList.Text))
             {
-                Utils.ShowToastr(this, "Debe Agregar un Usuario", "Error", "error");
+                Utils.ShowToastr(this, "Debe registrar un Usuario en el registro de Usuario!!", "Error", "error");
                 estado = true;
             }
             return estado;
@@ -136,13 +136,19 @@ namespace sCarDealerW.Registros
 
             if (String.IsNullOrWhiteSpace(VehiculoDropDownList.Text))
             {
-                Utils.ShowToastr(this, "Debe Agregar un Vehiculo", "Error", "error");
+                Utils.ShowToastr(this, "Debe registrar un vehiculo en el registro de Vehiculos!!", "Error", "error");
                 estado = true;
             }
 
             if (String.IsNullOrWhiteSpace(ClienteDropDownList.Text))
             {
-                Utils.ShowToastr(this, "Debe Agregar un Cliente", "Error", "error");
+                Utils.ShowToastr(this, "Debe registrar un Cliente en el registro de Cliente!!", "Error", "error");
+                estado = true;
+            }
+
+            if (String.IsNullOrWhiteSpace(UsuarioDropDownList.Text))
+            {
+                Utils.ShowToastr(this, "Debe registrar un Usuario en el registro de Usuario!!", "Error", "error");
                 estado = true;
             }
 
@@ -263,7 +269,9 @@ namespace sCarDealerW.Registros
 
             if (Validarr())
                 return;
-      
+
+            if (Existencia())
+                return;
             Ventas P = new Ventas();
             P = (Ventas)ViewState["Ventas"];
             Vehiculos A = new RepositorioBase<Vehiculos>().Buscar(Utils.ToInt(VehiculoDropDownList.SelectedValue));
@@ -424,9 +432,27 @@ namespace sCarDealerW.Registros
             UsuarioDropDownList.DataTextField = "Usuarioss";
             UsuarioDropDownList.DataBind();
 
-
-
             ViewState["Ventas"] = new Ventas();
+        }
+
+        private bool Existencia()
+        {
+            bool paso = false;
+            string estado = "Vendido";
+            string estado2 = "En reparacion";
+            RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
+            Vehiculos vehiculo = repositorio.Buscar(Convert.ToInt32(VehiculoDropDownList.SelectedValue));
+            if (estado == vehiculo.Estado)
+            {
+                Utils.ShowToastr(this, "Ya este vehiculo ha sido vendido", "Error", "error");
+                paso = true;
+            }
+            if (estado2 == vehiculo.Estado)
+            {
+                Utils.ShowToastr(this, "En reparacion", "Error", "error");
+                paso = true;
+            }
+            return paso;
         }
     }
 }
