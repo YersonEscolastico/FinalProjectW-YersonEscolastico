@@ -53,7 +53,7 @@ Esta ventana podrá ser utilizada para la registrar los vehiculos que esten disp
 
 
 ## CONSULTAS
-Esta es la ventana de las consultas la cual  sera utilizada para consultar los diferentes datos que esten disponibles en la base de datos del sistema.
+Esta ventana es una muestra de cómo son todas las  consultas con las que cuenta el sistema estas serán utilizada para consultar los diferentes datos que esten disponibles en la base de datos del sistema.
 ![cUsuarios](https://user-images.githubusercontent.com/50494642/69761642-f326c580-11a2-11ea-8127-eb9cc6dcbcec.PNG)
 
 ## REPORTES
