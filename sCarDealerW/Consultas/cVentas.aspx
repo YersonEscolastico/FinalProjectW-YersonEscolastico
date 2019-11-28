@@ -33,10 +33,9 @@
                         <div class="col-md-2">
                             <asp:DropDownList ID="BuscarPorDropDownList" runat="server" CssClass="form-control input-sm">
                                 <asp:ListItem>Todos</asp:ListItem>
-                                <asp:ListItem>VehiculoID</asp:ListItem>
-                                <asp:ListItem>Anio</asp:ListItem>
-                                <asp:ListItem>Placa</asp:ListItem>
-                                <asp:ListItem>Color</asp:ListItem>
+                                <asp:ListItem>VentaId</asp:ListItem>
+                                <asp:ListItem>VehiculoId</asp:ListItem>
+                                <asp:ListItem>Total</asp:ListItem>
                             </asp:DropDownList>
                         </div>
 

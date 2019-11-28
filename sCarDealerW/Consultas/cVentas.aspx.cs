@@ -41,6 +41,13 @@ namespace sCarDealerW.Consultas
                 case 1:
                     filtros = c => c.VentaId == criterio;
                     break;
+                case 2:
+                    filtros = c => c.VehiculoId == criterio;
+                    break;
+                case 3:
+                    filtros = c => c.VentaId == criterio;
+                    break;
+
             }
             if (DesdeTextBox.Text != "" & HastaTextBox.Text != "")
             {
