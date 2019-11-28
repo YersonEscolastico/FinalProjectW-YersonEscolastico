@@ -47,7 +47,7 @@ Esta ventana podrá ser utilizada para la registrar los diferentes vehiculos que
 ![Vehiculos](https://user-images.githubusercontent.com/50494642/69691975-a3e18600-110b-11ea-8238-0d52effe70a1.PNG)
 
 ## REGISTRO DE VENTAS
-Esta ventana podrá ser utilizada para la registrar las vehiculos de los vehiculos que esten disponibles para la venta en dicha empresa asi como tambien la modificación de los mismos.
+Esta ventana podrá ser utilizada para la registrar los vehiculos que esten disponibles para la venta en dicha empresa asi como tambien la modificación de los mismos.
 
 ![Ventas](https://user-images.githubusercontent.com/50494642/69692013-c1165480-110b-11ea-857b-06aa402d282e.PNG)
 
