@@ -11,7 +11,7 @@
 ![About_icon-icons com_55974](https://user-images.githubusercontent.com/50494642/62062891-77e8ed80-b25c-11e9-8e59-c9432487dad2.png)
 
 Car Dealer SFM es un sistema web diseñado con fin de que pueda ser utilizado en cualquier navegador Web como lo es (chrome, firefox, Internet Explorer,etc) sin importar el sistema operativo.
-Dicho sistema podrá utilizado por agencias que se dediquen a la venta de vehículos nuevos y usados permitiéndoles a estas tener el control absoluto de su empresa, registrando de las distintas entidades con la que cuente dicha empresa.
+Dicho sistema podrá ser utilizado por agencias que se dediquen a la venta de vehículos nuevos y usados permitiéndoles a estas tener el control absoluto de su empresa, registrando las distintas entidades con la que cuente dicha empresa.
 
 Para utilizar esta aplicacion Web no sera necesario instalarla en cada computadora ya que los usuarios se conectarán a un servidor donde está alojado dicho sistema. 
 
@@ -47,13 +47,13 @@ Esta ventana podrá ser utilizada para la registrar los diferentes vehiculos que
 ![Vehiculos](https://user-images.githubusercontent.com/50494642/69691975-a3e18600-110b-11ea-8238-0d52effe70a1.PNG)
 
 ## REGISTRO DE VENTAS
-Esta ventana podrá ser utilizada para la registrar las vehiculos de los vehiculos que esten disponibles para la venta en dicha empresa asi como tambien la modificación de los mismos.
+Esta ventana podrá ser utilizada para la registrar los vehiculos que esten disponibles para la venta en dicha empresa asi como tambien la modificación de los mismos.
 
 ![Ventas](https://user-images.githubusercontent.com/50494642/69692013-c1165480-110b-11ea-857b-06aa402d282e.PNG)
 
 
 ## CONSULTAS
-Esta es la ventana de las consultas la cual  sera utilizada para consultar los diferentes datos que esten disponibles en la base de datos del sistema.
+Esta ventana es una muestra de cómo son todas las  consultas con las que cuenta el sistema estas serán utilizada para consultar los diferentes datos que esten disponibles en la base de datos del sistema.
 ![cUsuarios](https://user-images.githubusercontent.com/50494642/69761642-f326c580-11a2-11ea-8127-eb9cc6dcbcec.PNG)
 
 ## REPORTES
@@ -67,6 +67,7 @@ Ya por ultimo estan los informes o reportes que seran los encargados de organiza
 1. Visual Studio Community
 2. Microsoft SQL Server Management Studio 
 3. Entity Framework
+
 4.Conexion a internet
 ## CONTRIBUIDOR
 
