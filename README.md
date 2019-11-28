@@ -11,7 +11,7 @@
 ![About_icon-icons com_55974](https://user-images.githubusercontent.com/50494642/62062891-77e8ed80-b25c-11e9-8e59-c9432487dad2.png)
 
 Car Dealer SFM es un sistema web diseñado con fin de que pueda ser utilizado en cualquier navegador Web como lo es (chrome, firefox, Internet Explorer,etc) sin importar el sistema operativo.
-Dicho sistema podrá utilizado por agencias que se dediquen a la venta de vehículos nuevos y usados permitiéndoles a estas tener el control absoluto de su empresa, registrando de las distintas entidades con la que cuente dicha empresa.
+Dicho sistema podrá ser utilizado por agencias que se dediquen a la venta de vehículos nuevos y usados permitiéndoles a estas tener el control absoluto de su empresa, registrando de las distintas entidades con la que cuente dicha empresa.
 
 Para utilizar esta aplicacion Web no sera necesario instalarla en cada computadora ya que los usuarios se conectarán a un servidor donde está alojado dicho sistema. 
 
