@@ -67,6 +67,7 @@ Ya por ultimo estan los informes o reportes que seran los encargados de organiza
 1. Visual Studio Community
 2. Microsoft SQL Server Management Studio 
 3. Entity Framework
+
 4.Conexion a internet
 ## CONTRIBUIDOR
 
