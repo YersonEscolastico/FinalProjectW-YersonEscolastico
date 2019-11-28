@@ -91,6 +91,10 @@
                         <asp:Button runat="server" Text="Iniciar" class="btn btn-md btn-success btn-block" OnClick="LoginButton_Click" />
 
                         <br />
+
+                               <div class="text-center">
+                    <a href="Registros/rUsuarios.aspx" class="text-center new-account">Entrar sin contraseña </a>
+                                   </div>
                     </form>
                 </div>
             </div>

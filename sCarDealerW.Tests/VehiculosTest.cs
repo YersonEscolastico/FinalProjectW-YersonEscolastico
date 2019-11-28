@@ -21,7 +21,7 @@ namespace sCarDealerW.Tests
 
         Vehiculos vh = new Vehiculos()
         {
-            VehiculoId = 1,
+            VehiculoId = 2,
             Vin = "21e1",
             Marca = "Toyota",
             Placa = "121",
@@ -44,18 +44,9 @@ namespace sCarDealerW.Tests
 
         Vehiculos vh = new Vehiculos()
         {
-            VehiculoId = 1,
-            Vin = "21e1",
-            Marca = "Toyota",
-            Placa = "121",
-            Modelo = "Ferr",
-            Color = "Rojo",
-            Anio = "21",
-            Descripcion = "ew",
-            Costo = 0,
-            Precio = 0,
-            Estado = "Vendido",
-            FechaRegistro = DateTime.Now
+
+            Vin = "21e11",
+
         };
 
         Assert.IsTrue(db.Modificar(vh));
@@ -66,7 +57,7 @@ namespace sCarDealerW.Tests
     {
         RepositorioBase<Vehiculos> db = new RepositorioBase<Vehiculos>();
 
-        Assert.IsNotNull(db.Buscar(1));
+        Assert.IsNotNull(db.Buscar(2));
     }
 
     [TestMethod()]

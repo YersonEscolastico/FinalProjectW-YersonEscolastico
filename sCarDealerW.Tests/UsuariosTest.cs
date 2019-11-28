@@ -38,12 +38,8 @@ namespace sCarDealerW.Tests
             Usuarios us = new Usuarios()
             {
                 UsuarioId = 1,
-                Nombres = "Juann",
-                Email = "Juan@gmail.com",
-                Usuarioss = "Juan123",
-                Clave = "123",
-                NivelAcceso = "Usuario",
-                Fecha = DateTime.Now
+                Nombres = "Juane"
+
             };
 
             Assert.IsTrue(db.Modificar(us));

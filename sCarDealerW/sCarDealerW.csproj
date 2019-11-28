@@ -175,6 +175,9 @@
     <Content Include="ClientesDataSet.xss">
       <DependentUpon>ClientesDataSet.xsd</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\CarDealer - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\CarDealer - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\CarDealer - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -446,10 +449,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Reportes\cReport.rdlc" />
-    <EmbeddedResource Include="Reportes\uReport.rdlc" />
-    <EmbeddedResource Include="Reportes\vdReport.rdlc" />
-    <EmbeddedResource Include="Reportes\vReport.rdlc" />
+    <Content Include="Reportes\cReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\uReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\vdReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\vReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

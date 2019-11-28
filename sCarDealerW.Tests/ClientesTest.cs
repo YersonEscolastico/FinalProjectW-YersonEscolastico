@@ -42,15 +42,8 @@ namespace sCarDealerW.Tests
             Clientes cliente = new Clientes()
             {
                 ClienteId = 1,
-                Nombres = "Yesicaa",
-                Sexo = "F",
-                Email = "Yesica@gmail.com",
-                Cedula = "0",
-                Direccion = "g",
-                Telefono = "8092145",
-                Celular = "829213",
-                FechaNacimiento = DateTime.Now,
-                FechaRegistro = DateTime.Now
+                Nombres = "Yesic",
+
             };
 
             Assert.IsTrue(db.Modificar(cliente));

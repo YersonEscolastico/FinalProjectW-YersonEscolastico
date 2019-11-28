@@ -99,16 +99,30 @@ namespace sCarDealerW.Registros
         {
             bool estado = false;
 
-            if (VentasGridView.Rows.Count == 0)
+            if (String.IsNullOrWhiteSpace(VehiculoDropDownList.Text))
             {
-                Utils.ShowToastr(this, "Debe agregar detalle.", "Error", "error");
+                Utils.ShowToastr(this, "Debe Agregar un Vehiculo", "Error", "error");
                 estado = true;
             }
-            if (String.IsNullOrWhiteSpace(VentaIdTextBox.Text))
+
+            if (String.IsNullOrWhiteSpace(ClienteDropDownList.Text))
             {
-                Utils.ShowToastr(this, "Debe tener un Id para guardar", "Error", "error");
+                Utils.ShowToastr(this, "Debe Agregar un Cliente", "Error", "error");
                 estado = true;
             }
+
+            if (String.IsNullOrWhiteSpace(UsuarioDropDownList.Text))
+            {
+                Utils.ShowToastr(this, "Debe Agregar un Usuario", "Error", "error");
+                estado = true;
+            }
+            return estado;
+        }
+
+        private bool Validarr()
+        {
+            bool estado = false;
+
             if (String.IsNullOrWhiteSpace(VehiculoDropDownList.Text))
             {
                 Utils.ShowToastr(this, "Debe Agregar un Vehiculo", "Error", "error");
@@ -233,6 +247,10 @@ namespace sCarDealerW.Registros
             RepositorioBase<Vehiculos> repositorio = new RepositorioBase<Vehiculos>();
 
             if (ValidarD())
+                return;
+
+
+            if (Validarr())
                 return;
 
             int id = Utils.ToInt(VehiculoDropDownList.SelectedValue);

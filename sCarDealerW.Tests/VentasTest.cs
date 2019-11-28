@@ -36,11 +36,8 @@ namespace sCarDealerW.Tests
 
                 Ventas ve = new Ventas()
                 {
-                    VentaId = 1,
-                    ClienteId = 0,
-                    UsuarioId = 0,
-                    Total = 0,
-                    FechaVenta = DateTime.Now
+
+                    Total = 1,
                 };
 
                 Assert.IsTrue(db.Modificar(ve));
